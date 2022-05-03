@@ -227,5 +227,4 @@
 
     <!-- up arrow navigation -->
     <x-up-arrow-navigation/>
-
 @endsection

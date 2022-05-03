@@ -556,6 +556,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[10vw\] {
   width: 10vw;
 }
+.w-\[30vw\] {
+  width: 30vw;
+}
 .w-\[62vw\] {
   width: 62vw;
 }
@@ -567,9 +570,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[16vw\] {
   width: 16vw;
-}
-.w-\[30vw\] {
-  width: 30vw;
 }
 .flex-col {
   flex-direction: column;
@@ -606,6 +606,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rounded-\[1vw\] {
   border-radius: 1vw;
+}
+.rounded-\[0\.5vw\] {
+  border-radius: 0.5vw;
+}
+.border-b-\[0\.2vw\] {
+  border-bottom-width: 0.2vw;
 }
 .border-b-\[\.2vw\] {
   border-bottom-width: .2vw;
@@ -659,6 +665,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-\[1\.2vw\] {
   padding-top: 1.2vw;
+}
+.pl-\[10vw\] {
+  padding-left: 10vw;
+}
+.pl-\[\.5vw\] {
+  padding-left: .5vw;
 }
 .pl-\[4vw\] {
   padding-left: 4vw;
@@ -765,6 +777,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(0 116 214 / var(--tw-text-opacity));
 }
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
 .hover\:text-\[\#4267B2\]:hover {
   --tw-text-opacity: 1;
   color: rgb(66 103 178 / var(--tw-text-opacity));
@@ -780,6 +796,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.hover\:text-blue-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .hover\:text-\[\#0074D6\]:hover {
   --tw-text-opacity: 1;

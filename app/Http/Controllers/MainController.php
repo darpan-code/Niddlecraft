@@ -10,4 +10,9 @@ class MainController extends Controller
     function index(){
         return view('home');
     }
+
+    // User Login Page
+    function userLogin(){
+        return view('authentication.userAuth.login');
+    }
 }

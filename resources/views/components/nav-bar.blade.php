@@ -11,7 +11,7 @@
 
 @if ($loginStatus==='False')
     <div class="flex items-center mr-[5vw]">
-        <div><a href="{{ asset('user-login.html') }}" target="_blank" class="text-[#0074D6] hover:text-[#0074D6]">login</a></div>
+        <div><a href="{{ route('user-login') }}" target="_blank" class="text-[#0074D6] hover:text-[#0074D6]">login</a></div>
         <div>
             <button onclick="window.open('{{ asset('user-registration.html') }}','_blank')" class="bg-[#0074D6] text-white ml-[2vw] w-[8vw] h-[3.3vw] rounded-[.5vw]">Register</button>
         </div>
