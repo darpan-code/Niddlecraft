@@ -15,4 +15,9 @@ class MainController extends Controller
     function userLogin(){
         return view('authentication.userAuth.login');
     }
+
+    // User Forgot Password page
+    function forgotPassword(){
+        return view('authentication.userAuth.forgot-password');
+    }
 }

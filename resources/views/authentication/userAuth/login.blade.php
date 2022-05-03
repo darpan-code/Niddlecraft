@@ -27,7 +27,7 @@
 
                 <div class="mt-[1vw] pl-[.5vw]">
                     <div class="text-[#0074D6] text-[1.2vw]">
-                        <a href="user-forgot-password.html" class="text-blue-600 hover:text-blue-600">Forgot Password?</a>
+                        <a href="{{ route('forgot-password') }}" class="text-blue-600 hover:text-blue-600">Forgot Password?</a>
                         <a href="{{ asset('/#contact') }}" class="text-blue-600 hover:text-blue-600">Contact Us</a>
                     </div>
                     <div class="font-medium text-[1.5vw] mt-[2vw]">

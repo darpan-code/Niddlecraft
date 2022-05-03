@@ -478,6 +478,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-\[1vw\] {
   margin-left: 1vw;
 }
+.mt-\[8vw\] {
+  margin-top: 8vw;
+}
 .flex {
   display: flex;
 }
@@ -507,6 +510,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-\[3\.3vw\] {
   height: 3.3vw;
+}
+.h-\[24vw\] {
+  height: 24vw;
 }
 .w-\[35vw\] {
   width: 35vw;
@@ -634,6 +640,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#121212\] {
   --tw-bg-opacity: 1;
   background-color: rgb(18 18 18 / var(--tw-bg-opacity));
+}
+.bg-\[\#D2D2D2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 210 210 / var(--tw-bg-opacity));
 }
 .object-cover {
   -o-object-fit: cover;
@@ -780,6 +790,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .hover\:text-\[\#4267B2\]:hover {
   --tw-text-opacity: 1;

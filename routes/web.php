@@ -19,3 +19,6 @@ Route::get('/', [MainController::class, 'index']);
 
 // User Login page
 Route::get('/login', [MainController::class, 'userLogin'])->name('user-login');
+
+// User Forgot Password page
+Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name('forgot-password');
