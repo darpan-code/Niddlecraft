@@ -514,6 +514,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[24vw\] {
   height: 24vw;
 }
+.h-\[32vw\] {
+  height: 32vw;
+}
 .w-\[35vw\] {
   width: 35vw;
 }

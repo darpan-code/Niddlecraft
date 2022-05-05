@@ -14,7 +14,6 @@
             <div class="text-[5vw] font-medium normal-case">Individuality of your Style</div>
             <div class="text-[2vw] pr-[8vw] normal-case pt-[1vw] text-[#5E5454]">Discover new way to create your own style.</div>
             <a href="{{ asset('user-appointment.html') }}" class="bg-[#0074D6] text-white mt-[2vw] w-[12vw] h-[4vw] rounded-[.5vw] text-[2vw] flex justify-center items-center">Book Now</a>
-            
         </div>
         <div>
             <img class="w-[40vw]" src="{{ asset('images/vectors/home-img.png') }}" alt="home image">

@@ -22,3 +22,6 @@ Route::get('/login', [MainController::class, 'userLogin'])->name('user-login');
 
 // User Forgot Password page
 Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name('forgot-password');
+
+// User OTP Verification page
+Route::get('/otp-verification', [MainController::class, 'otpVerification'])->name('otp-verification');

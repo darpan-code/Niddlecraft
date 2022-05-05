@@ -20,4 +20,9 @@ class MainController extends Controller
     function forgotPassword(){
         return view('authentication.userAuth.forgot-password');
     }
+
+    // User OTP Verification page
+    function otpVerification(){
+        return view('authentication.userAuth.otp-verification');
+    }
 }
