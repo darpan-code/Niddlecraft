@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 // Home page
 Route::get('/', [MainController::class, 'index']);
 
+// User Registration page
+Route::get('/registration', [MainController::class, 'userRegistration'])->name('user-registration');
+
 // User Login page
 Route::get('/login', [MainController::class, 'userLogin'])->name('user-login');
 

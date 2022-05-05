@@ -31,7 +31,7 @@
                         <a href="{{ asset('/#contact') }}" class="text-blue-600 hover:text-blue-600">Contact Us</a>
                     </div>
                     <div class="font-medium text-[1.5vw] mt-[2vw]">
-                        Don't have an account? <a class="text-blue-600 hover:text-blue-600" href="user-registration.html">Sign Up</a>
+                        Don't have an account? <a href="{{ route('user-registration') }}" class="text-blue-600 hover:text-blue-600">Sign Up</a>
                     </div>
                 </div>
             </div>

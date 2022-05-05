@@ -11,6 +11,11 @@ class MainController extends Controller
         return view('home');
     }
 
+    // User Registration Page
+    function userRegistration(){
+        return view('authentication.userAuth.registration');
+    }
+
     // User Login Page
     function userLogin(){
         return view('authentication.userAuth.login');
