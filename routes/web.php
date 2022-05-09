@@ -28,3 +28,18 @@ Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name(
 
 // User OTP Verification page
 Route::get('/otp-verification', [MainController::class, 'otpVerification'])->name('otp-verification');
+
+// User Profile page
+Route::get('/user-profile', [MainController::class, 'userProfile'])->name('user-profile');
+
+// User Manage Orders page
+Route::get('/user-manage-orders', [MainController::class, 'userManageOrders'])->name('user-manage-orders');
+
+// User Manage Address page
+Route::get('/user-manage-address', [MainController::class, 'userManageAddress'])->name('user-manage-address');
+
+// User Gifts & Rewards page
+Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])->name('user-gifts-&-rewards');
+
+// User Body Measurement page
+Route::get('/user-body-measurements', [MainController::class, 'userBodyMeasurements'])->name('user-body-measurements');

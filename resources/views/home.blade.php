@@ -6,7 +6,7 @@
 
 @section('body')
     <!-- nav-bar section -->
-    <x-nav-bar loginStatus='False'/>
+    <x-nav-bar userType='User' loginStatus='No'/>
 
     <!-- home section -->
     <div class="flex justify-around items-center mt-[6vw]">

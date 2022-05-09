@@ -22,7 +22,7 @@
                         <div class="font-medium">Password</div>
                         <input class="w-[30vw] border-gray-400 border-b-[0.2vw] text-[1.5vw] pl-[.5vw]" type="password" name="password" id="password" required>
                     </div>
-                    <button onclick="location.href='user-profile.html'" class="font-medium text-[2vw] bg-[#0074D6] text-white w-[30vw] h-[4vw] rounded-[0.5vw]" type="submit">Login</button>
+                    <button onclick="location.href='{{ route('user-profile') }}'" class="font-medium text-[2vw] bg-[#0074D6] text-white w-[30vw] h-[4vw] rounded-[0.5vw]" type="submit">Login</button>
                 </div>
 
                 <div class="mt-[1vw] pl-[.5vw]">
