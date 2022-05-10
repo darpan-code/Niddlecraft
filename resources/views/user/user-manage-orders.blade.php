@@ -35,31 +35,31 @@
 
             <!-- order list items-->
             <div class="h-[24vw] w-[58vw] mt-[1vw] overflow-y-scroll px-[1vw]">
-                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                     <div class="w-[12vw]">190422003</div>
                     <div class="w-[12vw]">Salver Kameez</div>
                     <div class="w-[12vw]">Processing</div>
                     <div class="w-[14vw]">COD/<a href="#" class="text-blue-600 hover:text-blue-600">Pay online</a></div>
                 </div>
-                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                     <div class="w-[12vw]">190422002</div>
                     <div class="w-[12vw]">Salver Kameez</div>
                     <div class="w-[12vw]">Shiped</div>
                     <div class="w-[14vw]">Payment Processing</div>
                 </div>
-                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                     <div class="w-[12vw]">190422001</div>
                     <div class="w-[12vw]">Salver Kameez</div>
                     <div class="w-[12vw]">Deliverd</div>
                     <div class="w-[14vw]">Payed</div>
                 </div>
-                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                     <div class="w-[12vw]">190422001</div>
                     <div class="w-[12vw]">Salver Kameez</div>
                     <div class="w-[12vw]">Deliverd</div>
                     <div class="w-[14vw]">Payed</div>
                 </div>
-                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+                <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                     <div class="w-[12vw]">190422001</div>
                     <div class="w-[12vw]">Salver Kameez</div>
                     <div class="w-[12vw]">Deliverd</div>

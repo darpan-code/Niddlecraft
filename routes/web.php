@@ -43,3 +43,6 @@ Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])
 
 // User Body Measurement page
 Route::get('/user-body-measurements', [MainController::class, 'userBodyMeasurements'])->name('user-body-measurements');
+
+// User Appointment page
+Route::get('/user-appointment', [MainController::class, 'userAppointment'])->name('user-appointment');

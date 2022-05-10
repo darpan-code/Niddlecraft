@@ -55,4 +55,9 @@ class MainController extends Controller
     function userBodyMeasurements(){
         return view('user.user-body-measurements');
     }
+
+    // User Body Measurements page
+    function userAppointment(){
+        return view('services.user-appointment');
+    }
 }

@@ -35,31 +35,31 @@
 
             <!-- cupon list items-->
         <div class="h-[24vw] w-[58vw] mt-[1vw] overflow-y-scroll px-[1vw]">
-            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                 <div class="w-[12vw]">ABC0023</div>
                 <div class="w-[12vw]">19/04/2020</div>
                 <div class="w-[12vw]">19/07/2020</div>
                 <div class="w-[12vw]"><a class="text-blue-600 hover:text-blue-600" href="#">Redeem Now</a></div>
             </div>
-            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                 <div class="w-[12vw]">ABC0023</div>
                 <div class="w-[12vw]">19/04/2020</div>
                 <div class="w-[12vw]">19/07/2020</div>
                 <div class="w-[12vw]"><a class="text-blue-600 hover:text-blue-600" href="#">Redeem Now</a></div>
             </div>
-            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                 <div class="w-[12vw]">ABC0023</div>
                 <div class="w-[12vw]">19/04/2020</div>
                 <div class="w-[12vw]">19/07/2020</div>
                 <div class="w-[12vw]"><a class="text-blue-600 hover:text-blue-600" href="#">Redeem Now</a></div>
             </div>
-            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                 <div class="w-[12vw]">ABC0023</div>
                 <div class="w-[12vw]">19/04/2020</div>
                 <div class="w-[12vw]">19/07/2020</div>
                 <div class="w-[12vw]"><a class="text-blue-600 hover:text-blue-600" href="#">Redeem Now</a></div>
             </div>
-            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mt-[1.5vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
+            <div class="flex justify-between items-center font-medium bg-[#D5EDFF] h-[4vw] mb-[1vw] px-[1vw] rounded-[0.5vw] text-[1.2vw]">
                 <div class="w-[12vw]">ABC0023</div>
                 <div class="w-[12vw]">19/04/2020</div>
                 <div class="w-[12vw]">19/07/2020</div>

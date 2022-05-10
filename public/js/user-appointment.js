@@ -6,7 +6,7 @@ $(document).ready(function () {
         switch (channgeValue) {
             case "custom tailoring for women":
                 $("#service-type").html('\
-                <option value="select">Select</option>\
+                <option value="">Select</option>\
                 <option value="suits">Suits</option>\
                 <option value="kurti">Kurti</option>\
                 <option value="gown">Gown</option>\
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
             case "custom tailoring for students":
                 $("#service-type").html('\
-                <option value="select">Select</option>\
+                <option value="">Select</option>\
                 <option value="full uniform">Full uniform</option>\
                 <option value="shirt">Shirt</option>\
                 <option value="pant">Pant</option>\
@@ -26,7 +26,7 @@ $(document).ready(function () {
         
             case "other services":
                 $("#service-type").html('\
-                <option value="select">Select</option>\
+                <option value="">Select</option>\
                 <option value="body measurement">Body Measurement</option>\
                 <option value="shorting">Shorting</option>\
                 <option value="resizing">Resizing</option>\
@@ -36,7 +36,7 @@ $(document).ready(function () {
                 break;
         
             default:
-                $("#service-type").html('<option value="select">Select</option>');
+                $("#service-type").html('<option value="">Select</option>');
                 break;
         }
     });

@@ -13,7 +13,7 @@
         <div class="w-[35vw] ml-[4vw]">
             <div class="text-[5vw] font-medium normal-case">Individuality of your Style</div>
             <div class="text-[2vw] pr-[8vw] normal-case pt-[1vw] text-[#5E5454]">Discover new way to create your own style.</div>
-            <a href="{{ asset('user-appointment.html') }}" class="bg-[#0074D6] text-white mt-[2vw] w-[12vw] h-[4vw] rounded-[.5vw] text-[2vw] flex justify-center items-center">Book Now</a>
+            <a href="{{ route('user-appointment') }}" class="bg-[#0074D6] text-white mt-[2vw] w-[12vw] h-[4vw] rounded-[.5vw] text-[2vw] flex justify-center items-center">Book Now</a>
         </div>
         <div>
             <img class="w-[40vw]" src="{{ asset('images/vectors/home-img.png') }}" alt="home image">
@@ -23,17 +23,21 @@
     <!-- mouse scroll animation section -->
     <div class="icon-scroll"></div>
     
-    <!-- Service section -->
+    <!-- service section -->
     <section id="service">
     <div class="pt-[8vw] mt-[6vw] flex items-center flex-col">
         <div class="text-[2.7vw] font-semibold">What we offer to our clients</div>
         <div class="text-[1.3vw] w-[50vw] text-center mt-[1.3vw] text-[#5E5454]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident excepturi iure totam consequuntur asperiores corporis debitis nisi quis accusantium dolor.</div>
         <div class="flex justify-between w-[80vw] mt-[5vw]">
+        
+            <!-- custom design section -->            
             <div class="w-[38.5vw] h-[22vw] service-box flex flex-col items-center justify-center">
                 <div class="text-[4vw] uppercase">custom design</div>
                 <div class="text-[1.7vw] py-[1vw] px-[2vw] text-center text-[#5E5454]">Fashion that exists in everything. Express the Fashion Love it.</div>
-                <a href="{{ asset('user-appointment.html') }}" class="bg-[#0074D6] text-white mt-[1vw] w-[14vw] h-[4vw] rounded-[.7vw] text-[2vw] capitalize flex justify-center items-center">appointment</a>
+                <a href="{{ route('user-appointment') }}" class="bg-[#0074D6] text-white mt-[1vw] w-[14vw] h-[4vw] rounded-[.7vw] text-[2vw] capitalize flex justify-center items-center">appointment</a>
             </div>
+
+            <!-- tailor's design section -->
             <div class="w-[38.5vw] h-[22vw] service-box flex flex-col items-center justify-center">
                 <div class="text-[4vw] uppercase">tailor's design</div>
                 <div class="text-[1.7vw] py-[1vw] px-[2vw] text-center text-[#5E5454]">Bringing You the Elements of Style Enhancing your inner beauty.</div>
