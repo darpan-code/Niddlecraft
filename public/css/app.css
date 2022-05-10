@@ -514,11 +514,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[3\.3vw\] {
   height: 3.3vw;
 }
-.h-\[24vw\] {
-  height: 24vw;
+.h-\[25vw\] {
+  height: 25vw;
 }
 .h-\[32vw\] {
   height: 32vw;
+}
+.h-\[24vw\] {
+  height: 24vw;
 }
 .h-\[35vw\] {
   height: 35vw;
@@ -650,13 +653,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(18 18 18 / var(--tw-bg-opacity));
 }
-.bg-\[\#D2D2D2\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(210 210 210 / var(--tw-bg-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-\[\#D2D2D2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 210 210 / var(--tw-bg-opacity));
 }
 .object-cover {
   -o-object-fit: cover;

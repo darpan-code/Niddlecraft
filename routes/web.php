@@ -28,3 +28,12 @@ Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name(
 
 // User OTP Verification page
 Route::get('/otp-verification', [MainController::class, 'otpVerification'])->name('otp-verification');
+
+// Admin Login page
+Route::get('/admin-login', [MainController::class, 'adminLogin'])->name('admin-login');
+
+// Admin forgot password
+Route::get('/admin-forgot-password', [MainController::class, 'adminForgotPassword'])->name('admin-forgot-password');
+
+// Admin otp verification
+Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])->name('admin-otp-verification');

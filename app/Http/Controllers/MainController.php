@@ -30,4 +30,19 @@ class MainController extends Controller
     function otpVerification(){
         return view('authentication.userAuth.otp-verification');
     }
+
+    // Admin Login page
+    function adminLogin(){
+        return view('authentication.adminAuth.admin-login');
+    }
+
+    // Admin Forgot Password page
+    function adminForgotPassword(){
+        return view('authentication.adminAuth.admin-forgot-password');
+    }
+
+    // Admin OTP to Change Password page
+    function adminOtpVerify(){
+        return view('authentication.adminAuth.admin-otp-verification');
+    }
 }

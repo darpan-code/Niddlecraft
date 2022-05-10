@@ -2,12 +2,18 @@
     <div class="ml-[5vw]">
         <a href="#"> <img class="w-[12vw]" src="{{ asset('images/logo/logo.png') }}" alt="Niddlecraft"> </a>
     </div>
+@if ($userSide==='Yes')
     <div class="flex justify-between w-[30vw]">
         <div><a href="#" class="hover:text-[#0074D6] font-medium"> home </a></div>
         <div><a href="#service" class="hover:text-[#0074D6]"> services </a></div>
         <div><a href="#our-tailor" class="hover:text-[#0074D6]"> our tailors </a></div>
         <div><a href="#contact" class="hover:text-[#0074D6]"> contact </a></div>
     </div>
+@else
+    <div class="flex justify-between">
+        <div><a href="#" class="hover:text-[#0074D6] font-bold"> Admin Dashboard </a></div>
+    </div>
+@endif
 
 @if ($loginStatus==='False')
     <div class="flex items-center mr-[5vw]">
