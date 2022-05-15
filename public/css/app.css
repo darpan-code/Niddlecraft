@@ -535,9 +535,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-\[49vw\] {
   margin-left: 49vw;
 }
-.mt-\[1\.5vw\] {
-  margin-top: 1.5vw;
-}
 .mt-\[8vw\] {
   margin-top: 8vw;
 }
@@ -685,6 +682,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[30vw\] {
   width: 30vw;
 }
+.w-\[25vw\] {
+  width: 25vw;
+}
 .w-\[18vw\] {
   width: 18vw;
 }
@@ -708,6 +708,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[57vw\] {
   width: 57vw;
+}
+.min-w-\[25vw\] {
+  min-width: 25vw;
 }
 .cursor-pointer {
   cursor: pointer;
