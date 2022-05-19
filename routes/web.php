@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BodyMeasurementsController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +32,8 @@ Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name(
 Route::get('/otp-verification', [MainController::class, 'otpVerification'])->name('otp-verification');
 
 // User Profile page
-Route::get('/user-profile', [MainController::class, 'userProfile'])->name('user-profile');
+Route::get('/user-profile/{UpdateStatus?}', [UserProfileController::class, 'viewData'])->name('user-profile');
+Route::post('/user-profile', [UserProfileController::class, 'updateData'])->name('user-profile');
 
 // User Manage Orders page
 Route::get('/user-manage-orders', [MainController::class, 'userManageOrders'])->name('user-manage-orders');
@@ -42,7 +45,8 @@ Route::get('/user-manage-address', [MainController::class, 'userManageAddress'])
 Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])->name('user-gifts-&-rewards');
 
 // User Body Measurement page
-Route::get('/user-body-measurements', [MainController::class, 'userBodyMeasurements'])->name('user-body-measurements');
+Route::get('/user-body-measurements/{UpdateStatus?}', [BodyMeasurementsController::class, 'viewData'])->name('user-body-measurements');
+Route::post('/user-body-measurements', [BodyMeasurementsController::class, 'updateData'])->name('user-body-measurements');
 
 // User Appointment page
 Route::get('/user-appointment', [MainController::class, 'userAppointment'])->name('user-appointment');

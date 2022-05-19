@@ -589,8 +589,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[3\.5vw\] {
   height: 3.5vw;
 }
-.h-\[87vw\] {
-  height: 87vw;
+.h-\[3vw\] {
+  height: 3vw;
 }
 .h-\[36vw\] {
   height: 36vw;
@@ -601,14 +601,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[57vw\] {
   height: 57vw;
 }
-.h-\[39vw\] {
-  height: 39vw;
-}
 .h-\[32vw\] {
   height: 32vw;
 }
 .h-\[35vw\] {
   height: 35vw;
+}
+.min-h-\[87vw\] {
+  min-height: 87vw;
+}
+.min-h-\[39vw\] {
+  min-height: 39vw;
 }
 .w-\[35vw\] {
   width: 35vw;
@@ -702,6 +705,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[65vw\] {
   width: 65vw;
+}
+.w-\[24vw\] {
+  width: 24vw;
 }
 .w-\[58vw\] {
   width: 58vw;
@@ -813,6 +819,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#0000007b\] {
   background-color: #0000007b;
 }
+.bg-\[\#d1e7dd\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 231 221 / var(--tw-bg-opacity));
+}
 .bg-\[\#D5EDFF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(213 237 255 / var(--tw-bg-opacity));
@@ -840,6 +850,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-\[1vw\] {
   padding-left: 1vw;
   padding-right: 1vw;
+}
+.py-\[2vw\] {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+.py-\[\.5vw\] {
+  padding-top: .5vw;
+  padding-bottom: .5vw;
 }
 .pr-\[8vw\] {
   padding-right: 8vw;

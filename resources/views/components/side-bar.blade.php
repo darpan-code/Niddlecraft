@@ -4,9 +4,13 @@
 
     @if ($userProfile==='Yes')
         <div class="w-[10vw] h-[10vw] overflow-hidden rounded-full relative top-[-3vw] left-[4vw] img-div">
-            <img src="images/customer/cust2.png" alt="User profile">
+        @if ($userImg)
+            <img src="{{ asset('storage/'.$userImg) }}" alt="User profile">
+        @else
+            <img src="images/customer/demoUser.jpg" alt="User profile">
+        @endif
             <div class="cursor-pointer w-[10vw] h-[5vw] bg-[#00000051] absolute left-[0vw] bottom-[-5vw] text-[2vw] text-[#ecececcc] flex justify-center items-center img-cover"><i class="fa-solid fa-camera"></i></div>
-            <input class="hidden" type="file" name="img" id="img-upload" accept="image/*">
+            <input class="hidden" type="file" name="image" id="img-upload" accept="image/*">
         </div>
     @elseif ($userProfile==='No')
         <div class="text-[1.7vw]">My Account</div>
