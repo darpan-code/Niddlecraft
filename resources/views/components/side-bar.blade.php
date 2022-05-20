@@ -7,7 +7,7 @@
         @if ($userImg)
             <img src="{{ asset('storage/'.$userImg) }}" alt="User profile">
         @else
-            <img src="images/customer/demoUser.jpg" alt="User profile">
+            <img src="{{ asset('images/customer/demoUser.jpg') }}" alt="User profile">
         @endif
             <div class="cursor-pointer w-[10vw] h-[5vw] bg-[#00000051] absolute left-[0vw] bottom-[-5vw] text-[2vw] text-[#ecececcc] flex justify-center items-center img-cover"><i class="fa-solid fa-camera"></i></div>
             <input class="hidden" type="file" name="image" id="img-upload" accept="image/*">

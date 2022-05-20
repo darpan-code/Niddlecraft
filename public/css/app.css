@@ -532,9 +532,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-\[5vw\] {
   margin-bottom: 5vw;
 }
-.ml-\[49vw\] {
-  margin-left: 49vw;
-}
 .mt-\[8vw\] {
   margin-top: 8vw;
 }
@@ -598,9 +595,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[24vw\] {
   height: 24vw;
 }
-.h-\[57vw\] {
-  height: 57vw;
-}
 .h-\[32vw\] {
   height: 32vw;
 }
@@ -609,6 +603,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .min-h-\[87vw\] {
   min-height: 87vw;
+}
+.min-h-\[48vw\] {
+  min-height: 48vw;
 }
 .min-h-\[39vw\] {
   min-height: 39vw;

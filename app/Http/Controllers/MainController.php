@@ -36,11 +36,6 @@ class MainController extends Controller
         return view('user.user-manage-orders');
     }
 
-    // User Manage Address page
-    function userManageAddress(){
-        return view('user.user-manage-address');
-    }
-
     // User Gifts & Rewards page
     function userGiftsRewards(){
         return view('user.user-gifts-&-rewards');

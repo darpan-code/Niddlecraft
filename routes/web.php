@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\BodyMeasurementsController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserAddressController;
+use App\Http\Controllers\BodyMeasurementsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,8 @@ Route::post('/user-profile', [UserProfileController::class, 'updateData'])->name
 Route::get('/user-manage-orders', [MainController::class, 'userManageOrders'])->name('user-manage-orders');
 
 // User Manage Address page
-Route::get('/user-manage-address', [MainController::class, 'userManageAddress'])->name('user-manage-address');
+Route::get('/user-manage-address/{UpdateStatus?}', [UserAddressController::class, 'viewData'])->name('user-manage-address');
+Route::post('/user-manage-address', [UserAddressController::class, 'updateData'])->name('user-manage-address');
 
 // User Gifts & Rewards page
 Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])->name('user-gifts-&-rewards');

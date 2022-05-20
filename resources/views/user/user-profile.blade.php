@@ -5,8 +5,9 @@
 @endpush
 
 @section('body')
+
 @if ($UserData)
-@foreach ($UserData as $User)
+	@foreach ($UserData as $User)
 	<!-- nav-bar section -->
     <x-nav-bar userType='User' loginStatus='Yes' userName='{{$User->name}}'/>
 
@@ -58,7 +59,8 @@
 
 				<div class="mt-[3vw] flex">
 					<button type="submit" class="bg-[#0074D6] text-white h-[3.5vw] w-[8vw] text-[1.5vw] rounded-[0.5vw] font-semibold">Save</button>
-
+				
+				{{-- Update data status in database --}}
 				@if ($UpdateStatus==='Updated')
 					<div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-[#d1e7dd] flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-update'>
 						<div>
@@ -75,6 +77,7 @@
 					</div>
 				@endif
 
+				{{-- form validation errors --}}
 				@if ($errors->any())
 					<div class="w-[24vw] py-[.5vw] rounded-[0.5vw] bg-warning flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-error'>
 					<ul>
@@ -91,7 +94,7 @@
 			</div>
 		</div>
 	</form>
-@endforeach
+	@endforeach
 @else
 	<img class="mt-[6vw]" src="{{ asset('images/vectors/connection_error.png') }}" alt="Connection error">
 @endif

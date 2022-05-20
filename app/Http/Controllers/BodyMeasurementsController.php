@@ -10,9 +10,10 @@ class BodyMeasurementsController extends Controller
 {
     // View
     function viewData($UpdateStatus=null){
+        $UserName = 'Megha Sen';
+        //fetch user data from database
         $measurementsData = DB::select('select * from user_body_measurements where user_id = :id', ['id'=>1]);
-
-        return view('user.user-body-measurements',['measurementsData'=>$measurementsData, 'UpdateStatus'=>$UpdateStatus]);
+        return view('user.user-body-measurements',['measurementsData'=>$measurementsData, 'UpdateStatus'=>$UpdateStatus, 'UserName'=>$UserName]);
     }
 
     // Update
@@ -42,8 +43,8 @@ class BodyMeasurementsController extends Controller
         $height = $request->height;
         $waistToKnee = $request->waistToKnee;
 
-        //update user data to database without image
-        $UpdatedData = DB::update("UPDATE `user_body_measurements` SET `shoulder` = '$shoulder', `chest` = '$chest', `bust` = '$bust', `underBust` = '$underBust', `waist` = '$waist', `wearingWaist` = '$wearingWaist', `hip` = '$hip', `thigh` = '$thigh', `upperArm` = '$upperArm', `inseam` = '$inseam', `outseam` = '$outseam', `totalRise` = '$totalRise', `hipAtCrotch` = '$hipAtCrotch', `calf` = '$calf', `bustPoint` = '$bustPoint', `knee` = '$knee', `hpsToWaist` = '$hpsToWaist', `frontHip` = '$frontHip', `backHip` = '$backHip', `frontRise` = '$frontRise', `backRise` = '$backRise', `height` = '$height', `waistToKnee` = '$waistToKnee' WHERE `user_body_measurements`.`user_id` = 1");
+        //update user data to database
+        $UpdatedData = DB::update("UPDATE `user_body_measurements` SET `shoulder` = '$shoulder', `chest` = '$chest', `bust` = '$bust', `underBust` = '$underBust', `waist` = '$waist', `wearingWaist` = '$wearingWaist', `hip` = '$hip', `thigh` = '$thigh', `upperArm` = '$upperArm', `inseam` = '$inseam', `outseam` = '$outseam', `totalRise` = '$totalRise', `hipAtCrotch` = '$hipAtCrotch', `calf` = '$calf', `bustPoint` = '$bustPoint', `knee` = '$knee', `hpsToWaist` = '$hpsToWaist', `frontHip` = '$frontHip', `backHip` = '$backHip', `frontRise` = '$frontRise', `backRise` = '$backRise', `height` = '$height', `waistToKnee` = '$waistToKnee' WHERE `user_body_measurements`.`user_id` = :id", ['id'=>1]);
 
         if ($UpdatedData) {
             $UpdateStatus = 'Updated';
