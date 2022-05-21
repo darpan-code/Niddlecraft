@@ -5,8 +5,6 @@
 @endpush
 
 @section('body')
-@if ($UserData)
-    @foreach ($UserData as $User)
 	<!-- nav-bar section -->
     <x-nav-bar userType='User' loginStatus='Yes' :userName=$UserName/>
 
@@ -37,30 +35,30 @@
                 </div> --}}
                     <div class="mt-[4vw]">
                         <div>Address</div>
-                        <input class="border-b-[0.2vw] w-[57vw] pl-[.5vw]" type="text" name="address" value="{{ $User->address }}">
+                        <input class="border-b-[0.2vw] w-[57vw] pl-[.5vw]" type="text" name="address" value="{{ $UserData['address'] }}">
                     </div>
                     <div class="mt-[4vw]">
                         <div>Landmark</div>
-                        <input class="border-b-[0.2vw] w-[57vw] pl-[.5vw]" type="text" name="landmark" value="{{ $User->landmark }}">
+                        <input class="border-b-[0.2vw] w-[57vw] pl-[.5vw]" type="text" name="landmark" value="{{ $UserData['landmark'] }}">
                     </div>
                 <div class="flex justify-between mt-[4vw]">
                     <div>
                         <div>City</div>
-                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="city" value="{{ $User->city }}">
+                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="city" value="{{ $UserData['city'] }}">
                     </div>
                     <div>
                         <div>District</div>
-                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="district" value="{{ $User->district }}" readonly>
+                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="district" value="{{ $UserData['district'] }}" readonly>
                     </div>
                 </div>
                 <div class="flex justify-between mt-[4vw]">
                     <div>
                         <div>Pin Code</div>
-                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="pincode" value="{{ $User->pincode }}">
+                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="pincode" value="{{ $UserData['pincode'] }}">
                     </div>
                     <div>
                         <div>State</div>
-                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="state" value="{{ $User->state }}" readonly>
+                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="state" value="{{ $UserData['state'] }}" readonly>
                     </div>
                 </div>
                 <div class="mt-[3vw] flex">
@@ -100,10 +98,6 @@
             </div>
         </div>
     </form>
-    @endforeach
-@else
-    <img class="mt-[6vw]" src="{{ asset('images/vectors/connection_error.png') }}" alt="Connection error">
-@endif
 
 <script>
 	$(document).ready(function () {

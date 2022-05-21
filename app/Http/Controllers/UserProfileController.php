@@ -10,7 +10,7 @@ class UserProfileController extends Controller
     // View
     function viewData($UpdateStatus=null){
         //fetch user data from database
-        $UserData = DB::select('select * from user_profile where id = :id', ['id'=>1]);
+        $UserData = DB::table('user_profile')->where('id', 1)->get();
         return view('user.user-profile', ['UserData'=>$UserData, 'UpdateStatus'=>$UpdateStatus]);
     }
 
@@ -37,11 +37,13 @@ class UserProfileController extends Controller
         $dob = $request->dob;
         if ($request->image) {
             $imgpath = $request->image->store('images/customers','public');
+
             //update user data to database with image
-            $UpdatedData = DB::update("UPDATE `user_profile` SET `name` = '$name', `phone_number` = '$number', `email` = '$email', `gender` = '$gender', `dob` = '$dob', `img` = '$imgpath', `password` = '$password' WHERE `user_profile`.`id` = :id", ['id'=>1]);
+            $UpdatedData = DB::table('user_profile')->where('id', 1)->update(['name'=>$name, 'email'=>$email, 'gender'=>$gender, 'dob'=>$dob, 'password'=>$password, 'img'=>$imgpath]);
+
         }else{
             //update user data to database without image
-            $UpdatedData = DB::update("UPDATE `user_profile` SET `name` = '$name', `email` = '$email', `gender` = '$gender', `dob` = '$dob', `password` = '$password' WHERE `user_profile`.`id` = :id", ['id'=>1]);
+            $UpdatedData = DB::table('user_profile')->where('id', 1)->update(['name'=>$name, 'email'=>$email, 'gender'=>$gender, 'dob'=>$dob, 'password'=>$password]);
         }
 
         if ($UpdatedData) {
@@ -49,7 +51,6 @@ class UserProfileController extends Controller
         }else{
             $UpdateStatus = 'Failed';
         }
-
         return redirect('/user-profile/'.$UpdateStatus);
     }
 }

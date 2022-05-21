@@ -16,54 +16,54 @@ return new class extends Migration
         // User Personal information table
         Schema::create('user_profile', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('phone_number', 255);
-            $table->string('email', 255);
-            $table->string('gender', 255);
-            $table->date('dob');
-            $table->text('img');
-            $table->text('password');
+            $table->string('name', 255)->nullable();
+            $table->string('phone_number', 255)->nullable();
+            $table->string('email', 255)->nullable();
+            $table->string('gender', 255)->nullable();
+            $table->date('dob')->nullable();
+            $table->text('img')->nullable();
+            $table->text('password')->nullable();
         });
 
         // User Shipping address table
         Schema::create('user_address', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->text('address');
-            $table->text('landmark');
-            $table->string('city', 255);
-            $table->string('district', 255);
-            $table->integer('pincode');
-            $table->string('state', 255);
+            $table->text('address')->nullable()->nullable();
+            $table->text('landmark')->nullable()->nullable();
+            $table->string('city', 255)->nullable()->nullable();
+            $table->string('district', 255)->nullable()->nullable();
+            $table->string('pincode', 255)->nullable()->nullable();
+            $table->string('state', 255)->nullable()->nullable();
         });
 
         // User Body measurements table
         Schema::create('user_body_measurements', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('shoulder', 100);
-            $table->string('chest', 100);
-            $table->string('bust', 100);
-            $table->string('underBust', 100);
-            $table->string('waist', 100);
-            $table->string('wearingWaist', 100);
-            $table->string('hip', 100);
-            $table->string('thigh', 100);
-            $table->string('upperArm', 100);
-            $table->string('inseam', 100);
-            $table->string('outseam', 100);
-            $table->string('totalRise', 100);
-            $table->string('hipAtCrotch', 100);
-            $table->string('calf', 100);
-            $table->string('bustPoint', 100);
-            $table->string('knee', 100);
-            $table->string('hpsToWaist', 100);
-            $table->string('frontHip', 100);
-            $table->string('backHip', 100);
-            $table->string('frontRise', 100);
-            $table->string('backRise', 100);
-            $table->string('height', 100);
-            $table->string('waistToKnee', 100);
+            $table->string('shoulder', 100)->nullable();
+            $table->string('chest', 100)->nullable();
+            $table->string('bust', 100)->nullable();
+            $table->string('underBust', 100)->nullable();
+            $table->string('waist', 100)->nullable();
+            $table->string('wearingWaist', 100)->nullable();
+            $table->string('hip', 100)->nullable();
+            $table->string('thigh', 100)->nullable();
+            $table->string('upperArm', 100)->nullable();
+            $table->string('inseam', 100)->nullable();
+            $table->string('outseam', 100)->nullable();
+            $table->string('totalRise', 100)->nullable();
+            $table->string('hipAtCrotch', 100)->nullable();
+            $table->string('calf', 100)->nullable();
+            $table->string('bustPoint', 100)->nullable();
+            $table->string('knee', 100)->nullable();
+            $table->string('hpsToWaist', 100)->nullable();
+            $table->string('frontHip', 100)->nullable();
+            $table->string('backHip', 100)->nullable();
+            $table->string('frontRise', 100)->nullable();
+            $table->string('backRise', 100)->nullable();
+            $table->string('height', 100)->nullable();
+            $table->string('waistToKnee', 100)->nullable();
         });
     }
 

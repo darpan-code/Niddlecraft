@@ -844,13 +844,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 4vw;
   padding-right: 4vw;
 }
-.px-\[1vw\] {
-  padding-left: 1vw;
-  padding-right: 1vw;
-}
 .py-\[2vw\] {
   padding-top: 2vw;
   padding-bottom: 2vw;
+}
+.px-\[1vw\] {
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 .py-\[\.5vw\] {
   padding-top: .5vw;

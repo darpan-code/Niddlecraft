@@ -5,9 +5,7 @@
 @endpush
 
 @section('body')
-
-@if ($UserData)
-	@foreach ($UserData as $User)
+@foreach ($UserData as $User)
 	<!-- nav-bar section -->
     <x-nav-bar userType='User' loginStatus='Yes' userName='{{$User->name}}'/>
 
@@ -94,11 +92,7 @@
 			</div>
 		</div>
 	</form>
-	@endforeach
-@else
-	<img class="mt-[6vw]" src="{{ asset('images/vectors/connection_error.png') }}" alt="Connection error">
-@endif
-
+@endforeach
 
 <script>
 	$(document).ready(function () {

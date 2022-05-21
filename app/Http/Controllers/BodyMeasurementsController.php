@@ -12,8 +12,43 @@ class BodyMeasurementsController extends Controller
     function viewData($UpdateStatus=null){
         $UserName = 'Megha Sen';
         //fetch user data from database
-        $measurementsData = DB::select('select * from user_body_measurements where user_id = :id', ['id'=>1]);
-        return view('user.user-body-measurements',['measurementsData'=>$measurementsData, 'UpdateStatus'=>$UpdateStatus, 'UserName'=>$UserName]);
+        $measurementsData = DB::table('user_body_measurements')->where('user_id', 1)->get();
+
+        // convert class based array to normal array
+        $measurementsData  = json_decode(json_encode($measurementsData ),true);
+
+        if ($measurementsData ===[]) {
+            $shoulder = '';
+            $chest = '';
+            $bust = '';
+            $underBust = '';
+            $waist = '';
+            $wearingWaist = '';
+            $hip = '';
+            $thigh = '';
+            $upperArm = '';
+            $inseam = '';
+            $outseam = '';
+            $totalRise = '';
+            $hipAtCrotch = '';
+            $calf = '';
+            $bustPoint = '';
+            $knee = '';
+            $hpsToWaist = '';
+            $frontHip = '';
+            $backHip = '';
+            $frontRise = '';
+            $backRise = '';
+            $height = '';
+            $waistToKnee = '';
+
+            $measurementsData  = compact('shoulder', 'chest', 'bust', 'underBust', 'waist', 'wearingWaist', 'hip', 'thigh', 'upperArm', 'inseam', 'outseam', 'totalRise', 'hipAtCrotch', 'calf', 'bustPoint', 'knee', 'hpsToWaist', 'frontHip', 'backHip', 'frontRise', 'backRise', 'height', 'waistToKnee');
+        }else{
+            foreach ($measurementsData  as $value) {
+                $measurementsData   = $value;
+            }
+        }
+        return view('user.user-body-measurements',['data'=>$measurementsData, 'UpdateStatus'=>$UpdateStatus, 'UserName'=>$UserName]);
     }
 
     // Update
@@ -44,14 +79,13 @@ class BodyMeasurementsController extends Controller
         $waistToKnee = $request->waistToKnee;
 
         //update user data to database
-        $UpdatedData = DB::update("UPDATE `user_body_measurements` SET `shoulder` = '$shoulder', `chest` = '$chest', `bust` = '$bust', `underBust` = '$underBust', `waist` = '$waist', `wearingWaist` = '$wearingWaist', `hip` = '$hip', `thigh` = '$thigh', `upperArm` = '$upperArm', `inseam` = '$inseam', `outseam` = '$outseam', `totalRise` = '$totalRise', `hipAtCrotch` = '$hipAtCrotch', `calf` = '$calf', `bustPoint` = '$bustPoint', `knee` = '$knee', `hpsToWaist` = '$hpsToWaist', `frontHip` = '$frontHip', `backHip` = '$backHip', `frontRise` = '$frontRise', `backRise` = '$backRise', `height` = '$height', `waistToKnee` = '$waistToKnee' WHERE `user_body_measurements`.`user_id` = :id", ['id'=>1]);
+        $UpdatedData = DB::table('user_body_measurements')->updateOrInsert(['user_id'=>1], ['shoulder'=>$shoulder, 'chest'=>$chest, 'bust'=>$bust, 'underBust'=>$underBust, 'waist'=>$waist, 'wearingWaist'=>$wearingWaist, 'hip'=>$hip, 'thigh'=>$thigh, 'upperArm'=>$upperArm, 'inseam'=>$inseam, 'outseam'=>$outseam, 'totalRise'=>$totalRise, 'hipAtCrotch'=>$hipAtCrotch, 'calf'=>$calf, 'bustPoint'=>$bustPoint, 'knee'=>$knee, 'hpsToWaist'=>$hpsToWaist, 'frontHip'=>$frontHip, 'backHip'=>$backHip, 'frontRise'=>$frontRise, 'backRise'=>$backRise, 'height'=>$height, 'waistToKnee'=>$waistToKnee]);
 
         if ($UpdatedData) {
             $UpdateStatus = 'Updated';
         }else{
             $UpdateStatus = 'Failed';
         }
-
         return redirect('/user-body-measurements/'.$UpdateStatus);
     }
 }

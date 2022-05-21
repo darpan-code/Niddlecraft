@@ -7,41 +7,59 @@ use Illuminate\Support\Facades\DB;
 
 class UserAddressController extends Controller
 {
-        // View
-        function viewData($UpdateStatus=null){
-            $UserName = 'Megha Sen';
-            //fetch user data from database
-            $UserData = DB::select('select * from user_address where user_id = :id', ['id'=>1]);
-            return view('user.user-manage-address', ['UserData'=>$UserData, 'UpdateStatus'=>$UpdateStatus, 'UserName'=>$UserName]);
-        }
-        
-        // Update
-        function updateData(Request $request){
-            // validation 
-            $validate = $request->validate([
-                'address' => 'required',
-                'landmark' => 'required',
-                'city' => 'required',
-                'district' => 'required',
-                'pincode' => 'required|integer',
-                'state' => 'required',
-            ]);
-            
-            // set form data to variable
-            $address = $request->address;
-            $landmark = $request->landmark;
-            $city = $request->city;
-            $pincode = $request->pincode;
+    // View
+    function viewData($UpdateStatus=null){
+        $UserName = 'Megha Sen';
+        //fetch user data from database
+        $UserData = DB::table('user_address')->where('user_id', 1)->get();
 
-            //update user data to database
-            $UpdatedData = DB::update("UPDATE `user_address` SET `address` = '$address', `landmark` = '$landmark', `city` = '$city', `pincode` = '$pincode' WHERE `user_address`.`user_id` = :id", ['id'=>1]);
-    
-            if ($UpdatedData) {
-                $UpdateStatus = 'Updated';
-            }else{
-                $UpdateStatus = 'Failed';
+        // convert class based array to normal array
+        $UserData = json_decode(json_encode($UserData),true);
+
+        if ($UserData===[]) {
+            $address = '';
+            $landmark = '';
+            $city = '';
+            $district = 'Hooghly';
+            $pincode = '';
+            $state = 'West Bengal';
+            $UserData = compact('address', 'landmark', 'city', 'district', 'pincode', 'state');
+        }else{
+            foreach ($UserData as $value) {
+                $UserData  = $value;
             }
-    
-            return redirect('/user-manage-address/'.$UpdateStatus);
         }
+        return view('user.user-manage-address', ['UserData'=>$UserData, 'UserName'=>$UserName, 'UpdateStatus'=>$UpdateStatus]);
+    }
+    
+    // Update
+    function updateData(Request $request){
+        // validation 
+        $validate = $request->validate([
+            'address' => 'required',
+            'landmark' => 'required',
+            'city' => 'required',
+            'district' => 'required',
+            'pincode' => 'required|integer',
+            'state' => 'required',
+        ]);
+        
+        // set form data to variable
+        $address = $request->address;
+        $landmark = $request->landmark;
+        $city = $request->city;
+        $district = 'Hooghly';
+        $state = 'West Bengal';
+        $pincode = $request->pincode;
+
+        //update user data to database
+        $UpdatedData = DB::table('user_address')->updateOrInsert(['user_id'=>1], ['address'=>$address, 'landmark'=>$landmark, 'city'=>$city, 'district'=>$district, 'pincode'=>$pincode, 'state'=>$state]);
+        
+        if ($UpdatedData) {
+            $UpdateStatus = 'Updated';
+        }else{
+            $UpdateStatus = 'Failed';
+        }
+        return redirect('/user-manage-address/'.$UpdateStatus);
+    }
 }
