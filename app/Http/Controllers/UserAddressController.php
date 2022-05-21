@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class UserAddressController extends Controller
 {
     // View
-    function viewData($UpdateStatus=null){
+    function viewData(){
         $UserName = 'Megha Sen';
         //fetch user data from database
         $UserData = DB::table('user_address')->where('user_id', 1)->get();
@@ -29,7 +29,7 @@ class UserAddressController extends Controller
                 $UserData  = $value;
             }
         }
-        return view('user.user-manage-address', ['UserData'=>$UserData, 'UserName'=>$UserName, 'UpdateStatus'=>$UpdateStatus]);
+        return view('user.user-manage-address', ['UserData'=>$UserData, 'UserName'=>$UserName]);
     }
     
     // Update
@@ -60,6 +60,7 @@ class UserAddressController extends Controller
         }else{
             $UpdateStatus = 'Failed';
         }
-        return redirect('/user-manage-address/'.$UpdateStatus);
+        return redirect()->route('user-manage-address')->with('status', $UpdateStatus);
+
     }
 }

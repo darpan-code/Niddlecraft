@@ -23,16 +23,6 @@
                 <div class="font-bold text-[2vw]">
                     Shipping Address
                 </div>
-                {{-- <div class="flex justify-between my-[4vw]">
-                    <div>
-                        <div>Name</div>
-                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text">
-                    </div>
-                    <div>
-                        <div>Mobile Number</div>
-                        <input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="tel">
-                    </div>
-                </div> --}}
                     <div class="mt-[4vw]">
                         <div>Address</div>
                         <input class="border-b-[0.2vw] w-[57vw] pl-[.5vw]" type="text" name="address" value="{{ $UserData['address'] }}">
@@ -65,14 +55,14 @@
                     <button type="submit" class="bg-[#0074D6] text-white h-[3.5vw] w-[8vw] text-[1.5vw] rounded-[0.5vw] font-semibold">Save</button>
                 
                 {{-- Update data status in database --}}
-                @if ($UpdateStatus==='Updated')
+                @if (session('status')==='Updated')
                     <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-[#d1e7dd] flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-update'>
                         <div>
                             Successfully updated your data.
                         </div>
                         <i class="fa-solid fa-xmark cursor-pointer" id="close-alert-box-update"></i>
                     </div>
-                @elseif($UpdateStatus==='Failed')
+                @elseif(session('status')==='Failed')
                     <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-warning flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-update'>
                         <div>
                             Can't update your data.

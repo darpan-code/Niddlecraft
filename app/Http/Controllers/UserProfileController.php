@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\DB;
 class UserProfileController extends Controller
 {
     // View
-    function viewData($UpdateStatus=null){
+    function viewData(){
         //fetch user data from database
         $UserData = DB::table('user_profile')->where('id', 1)->get();
-        return view('user.user-profile', ['UserData'=>$UserData, 'UpdateStatus'=>$UpdateStatus]);
+        return view('user.user-profile', ['UserData'=>$UserData]);
     }
 
     // Update
@@ -51,6 +51,6 @@ class UserProfileController extends Controller
         }else{
             $UpdateStatus = 'Failed';
         }
-        return redirect('/user-profile/'.$UpdateStatus);
+        return redirect()->route('user-profile')->with('status', $UpdateStatus);
     }
 }

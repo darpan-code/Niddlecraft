@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class BodyMeasurementsController extends Controller
 {
     // View
-    function viewData($UpdateStatus=null){
+    function viewData(){
         $UserName = 'Megha Sen';
         //fetch user data from database
         $measurementsData = DB::table('user_body_measurements')->where('user_id', 1)->get();
@@ -48,7 +48,7 @@ class BodyMeasurementsController extends Controller
                 $measurementsData   = $value;
             }
         }
-        return view('user.user-body-measurements',['data'=>$measurementsData, 'UpdateStatus'=>$UpdateStatus, 'UserName'=>$UserName]);
+        return view('user.user-body-measurements',['data'=>$measurementsData, 'UserName'=>$UserName]);
     }
 
     // Update
@@ -86,6 +86,6 @@ class BodyMeasurementsController extends Controller
         }else{
             $UpdateStatus = 'Failed';
         }
-        return redirect('/user-body-measurements/'.$UpdateStatus);
+        return redirect()->route('user-body-measurements')->with('status', $UpdateStatus);
     }
 }

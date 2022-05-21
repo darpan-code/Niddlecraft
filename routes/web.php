@@ -33,21 +33,21 @@ Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name(
 Route::get('/otp-verification', [MainController::class, 'otpVerification'])->name('otp-verification');
 
 // User Profile page
-Route::get('/user-profile/{UpdateStatus?}', [UserProfileController::class, 'viewData'])->name('user-profile');
+Route::get('/user-profile', [UserProfileController::class, 'viewData'])->name('user-profile');
 Route::post('/user-profile', [UserProfileController::class, 'updateData'])->name('user-profile');
 
 // User Manage Orders page
 Route::get('/user-manage-orders', [MainController::class, 'userManageOrders'])->name('user-manage-orders');
 
 // User Manage Address page
-Route::get('/user-manage-address/{UpdateStatus?}', [UserAddressController::class, 'viewData'])->name('user-manage-address');
+Route::get('/user-manage-address', [UserAddressController::class, 'viewData'])->name('user-manage-address');
 Route::post('/user-manage-address', [UserAddressController::class, 'updateData'])->name('user-manage-address');
 
 // User Gifts & Rewards page
 Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])->name('user-gifts-&-rewards');
 
 // User Body Measurement page
-Route::get('/user-body-measurements/{UpdateStatus?}', [BodyMeasurementsController::class, 'viewData'])->name('user-body-measurements');
+Route::get('/user-body-measurements', [BodyMeasurementsController::class, 'viewData'])->name('user-body-measurements');
 Route::post('/user-body-measurements', [BodyMeasurementsController::class, 'updateData'])->name('user-body-measurements');
 
 // User Appointment page

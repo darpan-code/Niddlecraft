@@ -93,7 +93,6 @@
                                     @else
                                         <option value="{{$val}}">{{$i}}&#8217;{{$j}}&#8221;</option>
                                     @endif
-                                    {{-- <option value="{{$i}}&#8217;{{$j}}&#8221;">{{$i}}&#8217;{{$j}}&#8221;</option> --}}
                                 @endfor
                             @endfor
                             </select>
@@ -112,14 +111,14 @@
                         <button type="submit" class="bg-[#0074D6] text-white h-[3.5vw] w-[8vw] text-[1.5vw] rounded-[0.5vw] font-semibold">Save</button>
 
                     {{-- Update data status in database --}}
-                    @if ($UpdateStatus==='Updated')
+                    @if (session('status')==='Updated')
                         <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-[#d1e7dd] flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-update'>
                             <div>
                                 Successfully updated your data.
                             </div>
                             <i class="fa-solid fa-xmark cursor-pointer" id="close-alert-box-update"></i>
                         </div>
-                    @elseif($UpdateStatus==='Failed')
+                    @elseif(session('status')==='Failed')
                         <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-warning flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-update'>
                             <div>
                                 Can't update your data.
