@@ -13,7 +13,7 @@
         <div><a href="{{ asset('/#contact') }}" class="hover:text-[#0074D6]"> contact </a></div>
     </div>
 @elseif ($userType==='Admin')
-    <div class="font-semibold w-[25vw] text-center">
+    <div class="font-bold w-[25vw] text-center">
         Admin Dashboard
     </div>
 @endif

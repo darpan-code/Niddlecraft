@@ -224,7 +224,7 @@
             <div><a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a></div>
         </div>
         <div class="text-[1.2vw] text-[#ffffff85] mt-[5vw]">
-            Copyright ©2022 All rights reserved | This website is made by <a class="text-white" href="{{ asset('admin-login.html') }}" target="_blank">Niddlecraft.</a>
+            Copyright ©2022 All rights reserved | This website is made by <a class="text-white" href="{{ route('admin-login') }}" target="_blank">Niddlecraft.</a>
         </div>
     </footer>
 
