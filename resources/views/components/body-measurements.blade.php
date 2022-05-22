@@ -2,10 +2,14 @@
     <div>{{$bodyPart}}
         <a href="#" class="hover:text-black" data-bs-toggle="modal" data-bs-target="#{{$id}}"><i class="fa-solid fa-circle-info"></i></a>
     </div>
-    <select class="border-b-[0.2vw] w-[7vw]">
-        <option value="select">Select</option>
+    <select class="border-b-[0.2vw] w-[7vw]" name="{{$id}}">
+        <option value="">Select</option>
     @for ($i = $lVal; $i <= $hVal; $i++)
-        <option value="{{$i}}">{{$i}}</option>
+        @if ($measurementsData==$i)
+            <option value="{{$i}}" selected="selected">{{$i}}</option>
+        @else
+            <option value="{{$i}}">{{$i}}</option>
+        @endif
     @endfor
     </select>
 </div>
@@ -26,7 +30,7 @@
             
             <div class="flex">
                 <div class="ml-[2vw]">
-                    <img class=" w-[20vw]" src="images/measurement/{{$img}}" alt="Shoulder-to-Shoulder">
+                    <img class=" w-[20vw]" src="{{ asset('images/measurement/'.$img) }}" alt="Shoulder-to-Shoulder">
                 </div>
                 <div class="ml-[3vw] w-[32vw]">
                     <div class="mb-[1vw] text-[1.6vw] font-semibold">{{$bodyPart}}</div>

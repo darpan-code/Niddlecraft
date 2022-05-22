@@ -10,11 +10,11 @@
 
 	<div class="mt-[12vw] flex">
 
-       <!-- side-bar section -->
-       <x-side-bar userProfile='No' userType='User'/>
+        <!-- side-bar section -->
+        <x-side-bar userProfile='No' userType='User'/>
 
-       {{-- side-bar link page js --}}
-       <x-side-bar-link id='#gifts'/>
+        {{-- side-bar link page js --}}
+        <x-side-bar-link id='#gifts'/>
 
         <!-- gift & reward section -->
         <div class="sidebar-border w-[65vw] h-[36vw] ml-[3vw] rounded-[1vw] text-[1.5vw] px-[4vw] pt-[2vw] font-semibold">
@@ -25,8 +25,8 @@
 				No Gift & Rewards
 			</div> -->
 
-             <!-- cupon list -->
-             <div class="flex justify-between items-center mt-[1vw] mx-[1vw] bg-[#0074D6] text-white font-medium h-[4vw] rounded-[0.5vw] px-[1vw] text-[1.3vw] ">
+            <!-- cupon list -->
+            <div class="flex justify-between items-center mt-[1vw] mx-[1vw] bg-[#0074D6] text-white font-medium h-[4vw] rounded-[0.5vw] px-[1vw] text-[1.3vw] ">
                 <div class="w-[12vw]">Coupon*</div>
                 <div class="w-[12vw]">Data of earning</div>
                 <div class="w-[12vw]">Data of expire</div>

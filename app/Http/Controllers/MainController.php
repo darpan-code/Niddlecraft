@@ -31,31 +31,16 @@ class MainController extends Controller
         return view('authentication.userAuth.otp-verification');
     }
 
-    // User Profile page
-    function userProfile(){
-        return view('user.user-profile');
-    }
-
     // User Manage Orders page
     function userManageOrders(){
         return view('user.user-manage-orders');
-    }
-
-    // User Manage Address page
-    function userManageAddress(){
-        return view('user.user-manage-address');
     }
 
     // User Gifts & Rewards page
     function userGiftsRewards(){
         return view('user.user-gifts-&-rewards');
     }
-
-    // User Body Measurements page
-    function userBodyMeasurements(){
-        return view('user.user-body-measurements');
-    }
-
+  
     // User Appointment page
     function userAppointment(){
         return view('services.user-appointment');
