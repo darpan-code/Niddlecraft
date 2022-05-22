@@ -47,11 +47,29 @@ Route::get('/user-body-measurements', [MainController::class, 'userBodyMeasureme
 // User Appointment page
 Route::get('/user-appointment', [MainController::class, 'userAppointment'])->name('user-appointment');
 
-// Admin Login page
+// Admin Login page.
 Route::get('/admin-login', [MainController::class, 'adminLogin'])->name('admin-login');
 
-// Admin forgot password
+// Admin forgot password page.
 Route::get('/admin-forgot-password', [MainController::class, 'adminForgotPassword'])->name('admin-forgot-password');
 
-// Admin otp verification
+// Admin otp verification page.
 Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])->name('admin-otp-verification');
+
+// Admin Profile page.
+Route::get('/admin-profile', [MainController::class, 'adminProfile'])->name('admin-profile');
+
+// Manage Users page.
+Route::get('/manage-users', [MainController::class, 'manageUsers'])->name('manage-users');
+
+// Customer Support page.
+Route::get('/customer-support', [MainController::class, 'customerSupport'])->name('customer-support');
+
+// Total Quarries page.
+Route::get('/total-queries', [MainController::class, 'totalQueries'])->name('total-queries');
+
+// New Quarries page.
+Route::get('/new-queries', [MainController::class, 'newQueries'])->name('new-queries');
+
+// Complete Quarries page.
+Route::get('/complete-queries', [MainController::class, 'completeQueries'])->name('complete-queries');
