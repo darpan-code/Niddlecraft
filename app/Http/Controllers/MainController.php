@@ -40,7 +40,7 @@ class MainController extends Controller
     function userGiftsRewards(){
         return view('user.user-gifts-&-rewards');
     }
-  
+
     // User Appointment page
     function userAppointment(){
         return view('services.user-appointment');
@@ -63,31 +63,26 @@ class MainController extends Controller
 
     // Admin Profile page.
     function adminProfile(){
-        return view('Admin.admin-profile');
-    }
-
-    // Manage Users page.
-    function manageUsers(){
-        return view('Admin.manage-users');
+        return view('admin.admin-profile');
     }
 
     // Customer Support page.
     function customerSupport(){
-        return view('Admin.customer-support');
+        return view('admin.customer-support');
     }
 
     // Total Queries page.
     function totalQueries(){
-        return view('Admin.customer_queries.total-queries');
+        return view('admin.customer_queries.total-queries');
     }
 
     // New Quarries page.
     function newQueries(){
-        return view('Admin.customer_queries.new-queries');
+        return view('admin.customer_queries.new-queries');
     }
 
     // Complete quarries page.
     function completeQueries(){
-        return view('Admin.customer_queries.complete-queries');
+        return view('admin.customer_queries.complete-queries');
     }
 }

@@ -27,9 +27,16 @@
         </div>
     </div>        
 @elseif ($loginStatus==='Yes')
-    <div class="flex items-center justify-end mr-[5vw] min-w-[25vw]">
-        <abbr title="Profile"><a href="{{ route('user-profile') }}" class="hover:text-black"><i class="fa-solid fa-user mr-[0.5vw]"></i>{{$userName}}</a></abbr>
-        <abbr title="Logout"><a href="{{ asset('/') }}" class="hover:text-black"><i class="fa-solid fa-right-from-bracket ml-[1vw]"></i></a></abbr>
-    </div>        
+    @if ($userType==='Admin')
+        <div class="flex items-center justify-end mr-[5vw] min-w-[25vw]">
+            <abbr title="Profile"><a href="{{ route('admin-profile') }}" class="hover:text-black"><i class="fa-solid fa-user mr-[0.5vw]"></i>{{$userName}}</a></abbr>
+            <abbr title="Logout"><a href="{{ asset('/') }}" class="hover:text-black"><i class="fa-solid fa-right-from-bracket ml-[1vw]"></i></a></abbr>
+        </div>        
+    @elseif ($userType==='User')
+        <div class="flex items-center justify-end mr-[5vw] min-w-[25vw]">
+            <abbr title="Profile"><a href="{{ route('user-profile') }}" class="hover:text-black"><i class="fa-solid fa-user mr-[0.5vw]"></i>{{$userName}}</a></abbr>
+            <abbr title="Logout"><a href="{{ asset('/') }}" class="hover:text-black"><i class="fa-solid fa-right-from-bracket ml-[1vw]"></i></a></abbr>
+        </div>    
+    @endif
 @endif
 </div>

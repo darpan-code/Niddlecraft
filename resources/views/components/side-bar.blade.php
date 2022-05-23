@@ -48,10 +48,10 @@
             <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="address"><i class="fa-solid fa-indian-rupee-sign mr-[0.5vw]"></i>Manage Payments</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('manage-users') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="ManageUsers"><i class="fa-solid fa-users mr-[0.5vw]"></i>Manage Users</a>
+            <a href="{{ route('manage-users') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="manageUsers"><i class="fa-solid fa-users mr-[0.5vw]"></i>Manage Users</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center">
-            <a href="{{ route('customer-support') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="Quarries"><i class="fa-solid fa-message mr-[0.5vw]"></i>Customer Support</a>
+            <a href="{{ route('customer-support') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="quarries"><i class="fa-solid fa-message mr-[0.5vw]"></i>Customer Support</a>
         </div>
     </div>
 @endif

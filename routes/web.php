@@ -5,6 +5,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\UserAddressController;
 use App\Http\Controllers\BodyMeasurementsController;
+use App\Http\Controllers\ManageUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,17 +57,17 @@ Route::get('/user-appointment', [MainController::class, 'userAppointment'])->nam
 // Admin Login page.
 Route::get('/admin-login', [MainController::class, 'adminLogin'])->name('admin-login');
 
-// Admin forgot password page.
+// Admin Forgot Password page.
 Route::get('/admin-forgot-password', [MainController::class, 'adminForgotPassword'])->name('admin-forgot-password');
 
-// Admin otp verification page.
+// Admin OTP Verification page.
 Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])->name('admin-otp-verification');
 
 // Admin Profile page.
 Route::get('/admin-profile', [MainController::class, 'adminProfile'])->name('admin-profile');
 
 // Manage Users page.
-Route::get('/manage-users', [MainController::class, 'manageUsers'])->name('manage-users');
+Route::get('/manage-users', [ManageUserController::class, 'viewData'])->name('manage-users');
 
 // Customer Support page.
 Route::get('/customer-support', [MainController::class, 'customerSupport'])->name('customer-support');

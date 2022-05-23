@@ -9,7 +9,7 @@
     <x-nav-bar userType='Admin' loginStatus='Yes' userName='Admin'/>
 
 	<form action="">
-	<div class="mt-[12vw] flex">
+	<div class="mt-[8vw] flex">
 
 		<!-- side-bar section -->
 		<x-side-bar userProfile='No' userType='Admin'/>
