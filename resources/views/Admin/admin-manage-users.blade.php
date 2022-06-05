@@ -26,7 +26,7 @@
                 <div class="flex">
                     <div class="flex items-center border-solid border-[.2vw] border-black rounded-[.5vw] h-[2.5vw] px-[.5vw]">
                         <i class="fa fa-search"></i>
-                        <input class="text-[1.2vw] font-medium ml-[.5vw]" type="search" name="search">
+                        <input class="text-[1.2vw] font-medium ml-[.5vw]" type="search" name="search" placeholder="Search" value="{{ old('search') }}">
                     </div>
                     <button class="bg-primary mx-[1vw] h-[2.5vw] w-[6vw] text-white  text-[1.2vw] text-center rounded-[.5vw]">Search</button>
                     <button class="bg-warning h-[2.5vw] w-[6vw] text-white  text-[1.2vw] text-center rounded-[.5vw]" type="button" onclick="location.href='{{ route('manage-users') }}'">Reset</button>
@@ -58,12 +58,12 @@
                             <div class="text-[1vw] max-w-[12vw] overflow-hidden">example@email.com</div>
                         @endif
 
-                        <button class="bg-blue-600 border-[.2vw] h-[2vw] w-[5vw] mt-[1vw] text-white  text-[0.9vw] text-center rounded-[.5vw]" type="button" data-bs-toggle="modal" data-bs-target="#user-{{ $User->id }}">View More</button>
+                        <button class="bg-blue-600 border-[.2vw] h-[2vw] w-[5vw] mt-[1vw] text-white  text-[0.9vw] text-center rounded-[.5vw]" type="button" data-bs-toggle="modal" data-bs-target="#user-{{ $User->uid }}">View More</button>
                     </div>
 
                     {{-- modal  --}}
                     
-                    <div class="modal fade" id="user-{{ $User->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="user-{{ $User->uid }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content w-[64vw] min-h-[36vw] relative">
                                 <button type="button" class="w-[2vw] h-[2vw] text-[1.5vw] absolute z-10 right-[0vw]" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>

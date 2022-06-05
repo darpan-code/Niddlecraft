@@ -157,6 +157,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'E-mail ID',
+        'number' => 'phone number',
+        'dob' => 'date of birth',
+        'pincode' => 'pin code',
+        
+    ],
 
 ];

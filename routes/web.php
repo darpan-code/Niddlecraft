@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminManageOrders;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\UserAddressController;
-use App\Http\Controllers\BodyMeasurementsController;
-use App\Http\Controllers\ManageUserController;
+use App\Http\Controllers\User\UserProfileController;
+use App\Http\Controllers\User\UserAddressController;
+use App\Http\Controllers\User\UserBodyMeasurementsController;
+use App\Http\Controllers\User\UserAppointmentController;
+use App\Http\Controllers\Admin\AdminManageUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,8 @@ use App\Http\Controllers\ManageUserController;
 
 // Home page
 Route::get('/', [MainController::class, 'index']);
+
+// ********************* User side Routes *********************
 
 // User Registration page
 Route::get('/registration', [MainController::class, 'userRegistration'])->name('user-registration');
@@ -48,11 +52,15 @@ Route::post('/user-manage-address', [UserAddressController::class, 'updateData']
 Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])->name('user-gifts-&-rewards');
 
 // User Body Measurement page
-Route::get('/user-body-measurements', [BodyMeasurementsController::class, 'viewData'])->name('user-body-measurements');
-Route::post('/user-body-measurements', [BodyMeasurementsController::class, 'updateData'])->name('user-body-measurements');
+Route::get('/user-body-measurements', [UserBodyMeasurementsController::class, 'viewData'])->name('user-body-measurements');
+Route::post('/user-body-measurements', [UserBodyMeasurementsController::class, 'updateData'])->name('user-body-measurements');
 
 // User Appointment page
-Route::get('/user-appointment', [MainController::class, 'userAppointment'])->name('user-appointment');
+Route::get('/user-appointment', [UserAppointmentController::class, 'viewData'])->name('user-appointment');
+Route::post('/user-appointment', [UserAppointmentController::class, 'insertData'])->name('user-appointment');
+
+
+// ********************* Admin side Routes *********************
 
 // Admin Login page.
 Route::get('/admin-login', [MainController::class, 'adminLogin'])->name('admin-login');
@@ -66,17 +74,20 @@ Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])
 // Admin Profile page.
 Route::get('/admin-profile', [MainController::class, 'adminProfile'])->name('admin-profile');
 
+// Manage Orders page.
+Route::get('/admin-manage-orders', [AdminManageOrders::class, 'viewData'])->name('admin-manage-orders');
+
 // Manage Users page.
-Route::get('/manage-users', [ManageUserController::class, 'viewData'])->name('manage-users');
+Route::get('/admin-manage-users', [AdminManageUserController::class, 'viewData'])->name('manage-users');
 
 // Customer Support page.
-Route::get('/customer-support', [MainController::class, 'customerSupport'])->name('customer-support');
+Route::get('/admin-customer-support', [MainController::class, 'customerSupport'])->name('customer-support');
 
 // Total Quarries page.
-Route::get('/total-queries', [MainController::class, 'totalQueries'])->name('total-queries');
+Route::get('/admin-customer-support/total-queries', [MainController::class, 'totalQueries'])->name('total-queries');
 
 // New Quarries page.
-Route::get('/new-queries', [MainController::class, 'newQueries'])->name('new-queries');
+Route::get('/admin-customer-support/new-queries', [MainController::class, 'newQueries'])->name('new-queries');
 
 // Complete Quarries page.
-Route::get('/complete-queries', [MainController::class, 'completeQueries'])->name('complete-queries');
+Route::get('/admin-customer-support/complete-queries', [MainController::class, 'completeQueries'])->name('complete-queries');

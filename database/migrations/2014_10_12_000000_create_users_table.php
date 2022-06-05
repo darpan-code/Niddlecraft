@@ -15,7 +15,7 @@ return new class extends Migration
     {
         // User Personal information table
         Schema::create('user_profile', function (Blueprint $table) {
-            $table->id();
+            $table->id('uid');
             $table->string('name', 255)->nullable();
             $table->string('phone_number', 255)->nullable();
             $table->string('email', 255)->nullable();
@@ -25,46 +25,9 @@ return new class extends Migration
             $table->text('password')->nullable();
         });
 
-        // User Shipping address table
-        Schema::create('user_address', function (Blueprint $table) {
-            $table->id();
-            $table->integer('user_id');
-            $table->text('address')->nullable()->nullable();
-            $table->text('landmark')->nullable()->nullable();
-            $table->string('city', 255)->nullable()->nullable();
-            $table->string('district', 255)->nullable()->nullable();
-            $table->string('pincode', 255)->nullable()->nullable();
-            $table->string('state', 255)->nullable()->nullable();
-        });
 
-        // User Body measurements table
-        Schema::create('user_body_measurements', function (Blueprint $table) {
-            $table->id();
-            $table->integer('user_id');
-            $table->string('shoulder', 100)->nullable();
-            $table->string('chest', 100)->nullable();
-            $table->string('bust', 100)->nullable();
-            $table->string('underBust', 100)->nullable();
-            $table->string('waist', 100)->nullable();
-            $table->string('wearingWaist', 100)->nullable();
-            $table->string('hip', 100)->nullable();
-            $table->string('thigh', 100)->nullable();
-            $table->string('upperArm', 100)->nullable();
-            $table->string('inseam', 100)->nullable();
-            $table->string('outseam', 100)->nullable();
-            $table->string('totalRise', 100)->nullable();
-            $table->string('hipAtCrotch', 100)->nullable();
-            $table->string('calf', 100)->nullable();
-            $table->string('bustPoint', 100)->nullable();
-            $table->string('knee', 100)->nullable();
-            $table->string('hpsToWaist', 100)->nullable();
-            $table->string('frontHip', 100)->nullable();
-            $table->string('backHip', 100)->nullable();
-            $table->string('frontRise', 100)->nullable();
-            $table->string('backRise', 100)->nullable();
-            $table->string('height', 100)->nullable();
-            $table->string('waistToKnee', 100)->nullable();
-        });
+
+
     }
 
     /**
@@ -75,7 +38,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('user_profile');
-        Schema::dropIfExists('user_address');
-        Schema::dropIfExists('user_body_measurements');
     }
 };

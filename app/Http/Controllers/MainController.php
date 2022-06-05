@@ -41,11 +41,6 @@ class MainController extends Controller
         return view('user.user-gifts-&-rewards');
     }
 
-    // User Appointment page
-    function userAppointment(){
-        return view('services.user-appointment');
-    }
-
     // Admin Login page.
     function adminLogin(){
         return view('authentication.adminAuth.admin-login');
@@ -68,7 +63,7 @@ class MainController extends Controller
 
     // Customer Support page.
     function customerSupport(){
-        return view('admin.customer-support');
+        return view('admin.admin-customer-support');
     }
 
     // Total Queries page.

@@ -42,7 +42,7 @@
             <a href="{{ route('admin-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="profile"><i class="fa-solid fa-user mr-[0.5vw]"></i>Admin Profile</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-manage-orders') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="orders"><i class="fa-solid fa-cart-arrow-down mr-[0.5vw]"></i>Manage Orders</a>
+            <a href="{{ route('admin-manage-orders') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="orders"><i class="fa-solid fa-cart-arrow-down mr-[0.5vw]"></i>Manage Orders</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
             <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="address"><i class="fa-solid fa-indian-rupee-sign mr-[0.5vw]"></i>Manage Payments</a>
