@@ -4,49 +4,71 @@ $(document).ready(function () {
         var channgeValue = $("#service").val();
         
         switch (channgeValue) {
-            case "custom tailoring for women":
+            case "C.T.W":
                 $("#service-type").html('\
-                <option value="">Select</option>\
-                <option value="suits">Suits</option>\
-                <option value="kurti">Kurti</option>\
-                <option value="gown">Gown</option>\
-                <option value="blouse">Blouse</option>\
+                <option value="" selected>Select</option>\
+                <option value="Suits">Suits</option>\
+                <option value="Kurti">Kurti</option>\
+                <option value="Gown">Gown</option>\
+                <option value="Blouse">Blouse</option>\
                 ');
                 break;
 
-            case "custom tailoring for students":
+            case "C.T.S":
                 $("#service-type").html('\
-                <option value="">Select</option>\
-                <option value="full uniform">Full uniform</option>\
-                <option value="shirt">Shirt</option>\
-                <option value="pant">Pant</option>\
-                <option value="custom uniform">Custom uniform</option>\
+                <option value="" selected>Select</option>\
+                <option value="Full Uniform">Full uniform</option>\
+                <option value="Shirt">Shirt</option>\
+                <option value="Pant">Pant</option>\
+                <option value="Custom Uniform">Custom uniform</option>\
                 ');
                 break;
         
-            case "other services":
+            case "O.S":
                 $("#service-type").html('\
-                <option value="">Select</option>\
-                <option value="body measurement">Body Measurement</option>\
-                <option value="shorting">Shorting</option>\
-                <option value="resizing">Resizing</option>\
-                <option value="repair">Repair</option>\');\
-                <option value="restoration">Restoration</option>\
+                <option value="" selected>Select</option>\
+                <option value="Body Measurement">Body Measurement</option>\
+                <option value="Shorting">Shorting</option>\
+                <option value="Resizing">Resizing</option>\
+                <option value="Repair">Repair</option>\');\
+                <option value="Restoration">Restoration</option>\
                 ');
                 break;
         
             default:
-                $("#service-type").html('<option value="">Select</option>');
+                $("#service-type").html('<option value="" selected>Select</option>');
+                break;
+        }
+    });
+
+
+    // Processing Order Status Option Change
+    $("#processing-order-status").change(function () { 
+        var channgeValue = $("#processing-order-status").val();
+        
+        switch (channgeValue) {
+            case "rejected":
+                $("#processing-orders").html('\
+                <select class="ml-[2vw] border-[0.1vw] border-black text-[1.2vw] w-[18vw] h-[2vw]" name="reason">\
+                    <option value="" selected>Select</option>\
+                    <option value="busy">Busy</option>\
+                    <option value="not enough time">Not enough time</option>\
+                </select>\
+                ');
+                break;
+        
+            default:
+                $("#processing-orders").html('<input class="ml-[2vw] pl-[0.2vw] border-[0.1vw] border-black text-[1.2vw] w-[18vw] h-[2vw]" type="date" name="delivaryDate" id="dalivary-date">');
                 break;
         }
     });
 
     // Body Measurement show/hide 
-    $("#bm-show").click(function(){
-        $("#bm-body").slideDown("slow");
-    });
-    $("#bm-hide").click(function(){
-        $("#bm-body").slideUp("slow");
-    });
+    // $("#bm-show").click(function(){
+    //     $("#bm-body").slideDown("slow");
+    // });
+    // $("#bm-hide").click(function(){
+    //     $("#bm-body").slideUp("slow");
+    // });
 
 });

@@ -73,12 +73,14 @@ footer a:hover{
 }
 
 .modal-dialog{
-    width: 63vw;
-    max-width: 63vw;
+    min-width: 63vw;
+    max-width: 90vw;
     margin: 1vw auto;
     border: none;
     outline: none;
     border-radius: .5vw;
+    display: flex;
+    justify-content: center;
 }
 
 .modal-content{

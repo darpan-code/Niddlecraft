@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('service_place', 255)->nullable();
             $table->text('design_img')->nullable();
             $table->date('order_date')->nullable();
+            $table->string('order_time', 255)->nullable();
+            $table->date('delivery_date')->nullable();
             $table->string('order_status', 255)->nullable();
+            $table->string('reason', 255)->nullable();
         });
     }
 

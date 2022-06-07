@@ -8,6 +8,11 @@ use App\Http\Controllers\User\UserAddressController;
 use App\Http\Controllers\User\UserBodyMeasurementsController;
 use App\Http\Controllers\User\UserAppointmentController;
 use App\Http\Controllers\Admin\AdminManageUserController;
+use App\Http\Controllers\Admin\Orders_pages\CancelOrdersController;
+use App\Http\Controllers\Admin\Orders_pages\CompleteOrdersController;
+use App\Http\Controllers\Admin\Orders_pages\DeliveryOrdersController;
+use App\Http\Controllers\Admin\Orders_pages\NewOrdersController;
+use App\Http\Controllers\Admin\Orders_pages\ProcessingOrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,8 +79,31 @@ Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])
 // Admin Profile page.
 Route::get('/admin-profile', [MainController::class, 'adminProfile'])->name('admin-profile');
 
-// Manage Orders page.
+// Admin Manage Orders page.
 Route::get('/admin-manage-orders', [AdminManageOrders::class, 'viewData'])->name('admin-manage-orders');
+
+// ------- Admin Appointment pages-------
+
+// Admin New Appointments page.
+Route::get('/admin-manage-orders/new-appointments', [NewOrdersController::class, 'appointmentsViewData'])->name('new-appointments');
+Route::post('/admin-manage-orders/new-appointments', [NewOrdersController::class, 'appointmentsUpdateStatus'])->name('new-appointments');
+
+// Admin Processing Appointments page.
+Route::get('/admin-manage-orders/processing-appointments', [ProcessingOrdersController::class, 'viewData'])->name('processing-appointments');
+
+// Admin Delivery Appointments page.
+Route::get('/admin-manage-orders/delivery-appointments', [DeliveryOrdersController::class, 'viewData'])->name('delivery-appointments');
+
+// Admin Complete Appointments page.
+Route::get('/admin-manage-orders/complete-appointments', [CompleteOrdersController::class, 'viewData'])->name('complete-appointments');
+
+// Admin Cancel Appointments page.
+Route::get('/admin-manage-orders/cancel-appointments', [CancelOrdersController::class, 'viewData'])->name('cancel-appointments');
+
+// ------- Admin Shopping pages-------
+
+// Admin New Order page.
+Route::get('/admin-manage-orders/new-orders', [NewOrdersController::class, 'ordersViewData'])->name('new-orders');
 
 // Manage Users page.
 Route::get('/admin-manage-users', [AdminManageUserController::class, 'viewData'])->name('manage-users');

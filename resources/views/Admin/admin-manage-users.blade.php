@@ -110,17 +110,17 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
                         </div>
+                    </div>
                 @endforeach
+            </div>
+            
+            <div class="text-[1vw] my-[1vw]">
+                {{ $UserData->links('pagination::bootstrap-4') }}
             </div>
         @else
             <img class="w-[40vw]" src="{{ asset('images/vectors/nodatafound.png') }}" alt="No Data Found">
         @endif
-
-            <div class="text-[1vw] my-[1vw]">
-                {{ $UserData->links('pagination::bootstrap-4') }}
-            </div>
         </div>
 	</div>
 @endsection

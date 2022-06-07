@@ -27,9 +27,9 @@
                         <div class="font-medium">Select Service<span class="text-red-600 ml-[.2vw]">*</span></div>
                         <select class="w-[20vw] pl-[.5vw] rounded-[.2vw]" id="service" name="service">
                             <option value="" selected>Select</option>
-                            <option value="custom tailoring for women">Custom tailoring for women</option>
-                            <option value="custom tailoring for students"> Custom tailoring for students</option>
-                            <option value="other services"> Other services</option>
+                            <option value="C.T.W">Custom tailoring for women</option>
+                            <option value="C.T.S">Custom tailoring for students</option>
+                            <option value="O.S">Other services</option>
                         </select>
                     </div>
                     <div class="w-[20vw]">
@@ -42,8 +42,8 @@
                         <div class="font-medium">Service Place<span class="text-red-600 ml-[.2vw]">*</span></div>
                         <select class="w-[20vw] pl-[.5vw] rounded-[.2vw]" id="service-place" name="servicePlace">
                             <option value="" selected>Select</option>
-                            <option value="store visit">Store visit</option>
-                            <option value="home visit">Home visit</option>
+                            <option value="Store Visit">Store visit</option>
+                            <option value="Home Visit">Home visit</option>
                         </select>
                     </div>
                     <div class="w-[15vw]">
@@ -62,14 +62,14 @@
             @if (session('status')==='Updated')
                 <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-[#d1e7dd] flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw] font-medium" id='alert-box-update'>
                     <div>
-                        Successfully updated your data.
+                        Successfully booked your appointment.
                     </div>
                     <i class="fa-solid fa-xmark cursor-pointer" id="close-alert-box-update"></i>
                 </div>
             @elseif(session('status')==='Failed')
                 <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-warning flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw]" id='alert-box-update'>
                     <div>
-                        Can't update your data.
+                        Unable to book your appointment.
                     </div>
                     <i class="fa-solid fa-xmark cursor-pointer" id="close-alert-box-update"></i>
                 </div>

@@ -33,6 +33,7 @@ class UserAppointmentController extends Controller
         $service = $request->service;
         $serviceType = $request->serviceType;
         $servicePlace = $request->servicePlace;
+        date_default_timezone_set("asia/kolkata");
         
         if ($request->uploadDesign) {
             $imgpath = $request->uploadDesign->store('images/clothDesigns','public');
@@ -44,7 +45,8 @@ class UserAppointmentController extends Controller
                 'service_type' => $serviceType,
                 'service_place' => $servicePlace,
                 'design_img' => $imgpath,
-                'order_date' => date("Y/m/d")
+                'order_date' => date("Y/m/d"),
+                'order_time' => date("H:i:s")
             ]);
         }else{
             //insert order data to database without image
@@ -53,7 +55,8 @@ class UserAppointmentController extends Controller
                 'service' => $service,
                 'service_type' => $serviceType,
                 'service_place' => $servicePlace,
-                'order_date' => date("Y/m/d")
+                'order_date' => date("Y/m/d"),
+                'order_time' => date("H:i:s")
             ]);
         }
 
