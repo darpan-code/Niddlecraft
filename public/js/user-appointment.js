@@ -42,27 +42,6 @@ $(document).ready(function () {
     });
 
 
-    // Processing Order Status Option Change
-    $("#processing-order-status").change(function () { 
-        var channgeValue = $("#processing-order-status").val();
-        
-        switch (channgeValue) {
-            case "rejected":
-                $("#processing-orders").html('\
-                <select class="ml-[2vw] border-[0.1vw] border-black text-[1.2vw] w-[18vw] h-[2vw]" name="reason">\
-                    <option value="" selected>Select</option>\
-                    <option value="busy">Busy</option>\
-                    <option value="not enough time">Not enough time</option>\
-                </select>\
-                ');
-                break;
-        
-            default:
-                $("#processing-orders").html('<input class="ml-[2vw] pl-[0.2vw] border-[0.1vw] border-black text-[1.2vw] w-[18vw] h-[2vw]" type="date" name="delivaryDate" id="dalivary-date">');
-                break;
-        }
-    });
-
     // Body Measurement show/hide 
     // $("#bm-show").click(function(){
     //     $("#bm-body").slideDown("slow");

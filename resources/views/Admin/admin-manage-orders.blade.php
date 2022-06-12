@@ -25,14 +25,14 @@
                 {{-- total orders --}}
                 <div class="bg-[#ECECEC] w-[18vw] h-[12vw] rounded-[1vw] text-center font-bold text-[2vw]">
                     <div class="mt-[1vw]">Total Orders</div>
-                    <div class="mt-[1vw] text-[2.5vw]">122</div>
+                    <div class="mt-[1vw] text-[2.5vw]">{{ $dataAppointment['totalAppointment'] }}</div>
                 </div>
-                
-                <x-smaill-box title='New Orders' data='55' location='{{ route("new-appointments") }}'/>
-                <x-smaill-box title='Processing' data='68' location='{{ route("processing-appointments") }}'/>
-                <x-smaill-box title='Delivary' data='68' location='{{ route("delivery-appointments") }}'/>
-                <x-smaill-box title='Complete' data='68' location='{{ route("complete-appointments") }}'/>
-                <x-smaill-box title='Cancel' data='68' location='{{ route("cancel-appointments") }}'/>
+
+                <x-smaill-box title='New Orders' data='{{ $dataAppointment["newAppointment"] }}' location='{{ route("new-appointments") }}'/>
+                <x-smaill-box title='Processing' data='{{ $dataAppointment["processingAppointment"] }}' location='{{ route("processing-appointments") }}'/>
+                <x-smaill-box title='Delivery' data='{{ $dataAppointment["deliveryAppointment"] }}' location='{{ route("delivery-appointments") }}'/>
+                <x-smaill-box title='Completed' data='{{ $dataAppointment["completeAppointment"] }}' location='{{ route("complete-appointments") }}'/>
+                <x-smaill-box title='Rejected' data='{{ $dataAppointment["cancelAppointment"] }}' location='{{ route("cancel-appointments") }}'/>
             </div>
         </div>
     </div>

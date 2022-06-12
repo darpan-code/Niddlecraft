@@ -2,14 +2,56 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
     // Home Page
     function index(){
-        return view('home');
+
+        $testimonial = DB::table('user_feedback')
+                            ->leftJoin('user_profile', 'user_feedback.user_id', '=', 'user_profile.uid')
+                            ->limit(3)
+                            ->get();
+
+        return view('home', ['testimonial' => $testimonial]);
     }
+
+    // Contact Page
+    function contactData(Request $request){
+
+        // validation
+        $validate = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required|max:40',
+            'message' => 'required|max:150'
+        ]);
+
+        // set form data to variable
+        $name = $request->name;
+        $email = $request->email;
+        $subject = $request->subject;
+        $message = $request->message;
+
+        // inesert data into database
+        $insertData = DB::table('customers_queries')->insert([
+                                'name' => $name,
+                                'email' => $email,
+                                'subject' => $subject,
+                                'message' => $message
+                            ]);
+
+        if ($insertData) {
+            $UpdateStatus = 'Updated';
+        }else{
+            $UpdateStatus = 'Failed';
+        }
+        return redirect(asset('/#contact'))->with('status', $UpdateStatus);
+    }
+
 
     // User Registration Page
     function userRegistration(){
@@ -31,15 +73,6 @@ class MainController extends Controller
         return view('authentication.userAuth.otp-verification');
     }
 
-    // User Manage Orders page
-    function userManageOrders(){
-        return view('user.user-manage-orders');
-    }
-
-    // User Gifts & Rewards page
-    function userGiftsRewards(){
-        return view('user.user-gifts-&-rewards');
-    }
 
     // Admin Login page.
     function adminLogin(){
@@ -56,28 +89,4 @@ class MainController extends Controller
         return view('authentication.adminAuth.admin-otp-verification');
     }
 
-    // Admin Profile page.
-    function adminProfile(){
-        return view('admin.admin-profile');
-    }
-
-    // Customer Support page.
-    function customerSupport(){
-        return view('admin.admin-customer-support');
-    }
-
-    // Total Queries page.
-    function totalQueries(){
-        return view('admin.customer_queries.total-queries');
-    }
-
-    // New Quarries page.
-    function newQueries(){
-        return view('admin.customer_queries.new-queries');
-    }
-
-    // Complete quarries page.
-    function completeQueries(){
-        return view('admin.customer_queries.complete-queries');
-    }
 }

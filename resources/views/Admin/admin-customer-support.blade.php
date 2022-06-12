@@ -21,9 +21,13 @@
             <div style="text-shadow: .2vw .2vw .5vw #000000;" class="text-center text-white font-bold text-[4vw] mt-[2vw] mb-[3vw]">Customer Queries</div>
 
             <div class="flex justify-around">
-                <x-smaill-box title='Total Queries' data='122' location='{{ route("total-queries") }}'/>
-                <x-smaill-box title='New Queries' data='55' location='{{ route("new-queries") }}'/>
-                <x-smaill-box title='Completed' data='68' location='{{ route("complete-queries") }}'/>
+                {{-- total orders --}}
+                <div class="bg-[#ECECEC] w-[18vw] h-[12vw] rounded-[1vw] text-center font-bold text-[2vw]">
+                    <div class="mt-[1vw]">Total Orders</div>
+                    <div class="mt-[1vw] text-[2.5vw]">{{ $dataQueries['totalQueries'] }}</div>
+                </div>
+                <x-smaill-box title='New Queries' data='{{ $dataQueries["newQueries"] }}' location='{{ route("new-queries") }}'/>
+                <x-smaill-box title='Completed' data='{{ $dataQueries["completeQueries"] }}' location='{{ route("complete-queries") }}'/>
             </div>
         </div>
     </div>

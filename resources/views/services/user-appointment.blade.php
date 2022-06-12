@@ -60,7 +60,7 @@
             
             {{-- Update data status in database --}}
             @if (session('status')==='Updated')
-                <div class="w-[24vw] h-[3vw] rounded-[0.5vw] bg-[#d1e7dd] flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw] font-medium" id='alert-box-update'>
+                <div class="w-[26vw] h-[3vw] rounded-[0.5vw] bg-[#d1e7dd] flex justify-between items-center px-[1vw] ml-[3vw] text-[1.2vw] font-medium" id='alert-box-update'>
                     <div>
                         Successfully booked your appointment.
                     </div>

@@ -9,7 +9,7 @@
     <x-nav-bar userType='User' loginStatus='No'/>
 
     <!-- home section -->
-    <div class="flex justify-around items-center mt-[6vw]">
+    <div class="flex justify-around items-center mt-[6vw] h-[36vw]">
         <div class="w-[35vw] ml-[4vw]">
             <div class="text-[5vw] font-medium normal-case">Individuality of your Style</div>
             <div class="text-[2vw] pr-[8vw] normal-case pt-[1vw] text-[#5E5454]">Discover new way to create your own style.</div>
@@ -123,53 +123,30 @@
         <!-- carousel start -->
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- item1 -->
-                <div class="carousel-item active">
+                
+            <!-- items -->
+            @foreach ($testimonial as $item)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                     <div class="flex justify-evenly items-end mt-[14vw]">
                         <div class="w-[31vw] h-[31vw] rounded-full bg-[#e7dfdf3a] overflow-hidden">
-                            <img class="w-[31vw]" src="{{ asset('images/customer/cust1.png') }}" alt="Customer 1">
-                        </div>
-                        <div>
-                            <div class="font-['Lobster'] text-[18vw] absolute right-[53vw] top-[160vw]">“</div>
-                            <div class="font-['Satisfy'] text-[2.3vw] w-[50vw] text-center">
-                                It is the accuracy and detail inherent in crafted goods that endows them with lasting value. It is the time and attention paid by the carpenter, the seamstress and the tailor that makes this detail possible.
-                            </div>
-                            <div class="font-['Italianno'] text-[3.5vw] font-medium text-right pr-[5vw]"> - Megha Sen</div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- item2 -->
-                <div class="carousel-item">
-                    <div class="flex justify-evenly items-end mt-[14vw]">
-                        <div class="w-[31vw] h-[31vw] rounded-full bg-[#e7dfdf3a] overflow-hidden">
-                            <img class="w-[31vw]" src="{{ asset('images/customer/cust1.png') }}" alt="Customer 1">
+                        @if ($item->img)
+                            <img class="w-[31vw]" src="{{ asset('storage/'. $item->img ) }}" alt="Customer 1">
+                        @else
+                            <img src="{{ asset('images/customer/demoUser.jpg') }}" alt="User profile">
+                        @endif
                         </div>
                         <div>
                             <div class="font-['Lobster'] text-[18vw] absolute right-[53vw] top-[160vw]">“</div>
                             <div class="font-['Satisfy'] text-[2.3vw] w-[50vw] text-center">
-                                It is the accuracy and detail inherent in crafted goods that endows them with lasting value. It is the time and attention paid by the carpenter, the seamstress and the tailor that makes this detail possible.
+                                {{ $item->message }}
                             </div>
-                            <div class="font-['Italianno'] text-[3.5vw] font-medium text-right pr-[5vw]"> - Megha Sen</div>
+                            <div class="font-['Italianno'] text-[3.5vw] font-medium text-right pr-[5vw]"> - {{ $item->name }}</div>
                         </div>
                     </div>
                 </div>
+            @endforeach
 
-                <!-- item3 -->
-                <div class="carousel-item">
-                    <div class="flex justify-evenly items-end mt-[14vw]">
-                        <div class="w-[31vw] h-[31vw] rounded-full bg-[#e7dfdf3a] overflow-hidden">
-                            <img class="w-[31vw]" src="{{ asset('images/customer/cust1.png') }}" alt="Customer 1">
-                        </div>
-                        <div>
-                            <div class="font-['Lobster'] text-[18vw] absolute right-[53vw] top-[160vw]">“</div>
-                            <div class="font-['Satisfy'] text-[2.3vw] w-[50vw] text-center">
-                                It is the accuracy and detail inherent in crafted goods that endows them with lasting value. It is the time and attention paid by the carpenter, the seamstress and the tailor that makes this detail possible.
-                            </div>
-                            <div class="font-['Italianno'] text-[3.5vw] font-medium text-right pr-[5vw]"> - Megha Sen</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 

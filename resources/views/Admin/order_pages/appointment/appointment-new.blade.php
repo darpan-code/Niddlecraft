@@ -18,7 +18,7 @@
         <div class="w-[2.5vw]"></div>
     </div>
 
-    <!-- Queries Column -->
+    <!-- Appointments Column -->
     <div class="flex justify-between items-center text-center mt-[1vw] mx-auto bg-[#0074D6] text-white font-semibold h-[4vw] rounded-[0.5vw] px-[1vw] text-[1.5vw] w-[92vw]">
         <div class="w-[8vw]">Order ID</div>
         <div class="w-[14vw]">Name</div>
@@ -30,7 +30,7 @@
         <div class="w-[5vw]">More</div>
     </div>
 
-    <!-- User Querie Details-->
+    <!-- User Appointments Details-->
     <div class="h-[33vw] mt-[1vw]">
             
     @if ($data)
@@ -169,7 +169,6 @@
                     }
                 });
             });
-
         </script>
         @endforeach
 

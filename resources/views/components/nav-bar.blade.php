@@ -21,9 +21,9 @@
     <!-- login-register button / user profile-logout button -->
 @if ($loginStatus==='No')
     <div class="flex items-center justify-end mr-[5vw] min-w-[25vw]">
-        <div><a href="{{ route('user-login') }}" target="_blank" class="text-[#0074D6] hover:text-[#0074D6]">login</a></div>
+        <div><a href="{{ route('user-login') }}" class="text-[#0074D6] hover:text-[#0074D6]">login</a></div>
         <div>
-            <button onclick="window.open('{{ route('user-registration') }}','_blank')" class="bg-[#0074D6] text-white ml-[2vw] w-[8vw] h-[3.3vw] rounded-[.5vw]">Register</button>
+            <button onclick="location.href='{{ route('user-registration') }}'" class="bg-[#0074D6] text-white ml-[2vw] w-[8vw] h-[3.3vw] rounded-[.5vw]">Register</button>
         </div>
     </div>        
 @elseif ($loginStatus==='Yes')

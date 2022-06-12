@@ -30,7 +30,7 @@
             <a href="{{ route('user-manage-address') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="address"><i class="fa-solid fa-location-dot mr-[0.5vw]"></i>Manage Address</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-gifts-&-rewards') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="gifts"><i class="fa-solid fa-circle-dollar-to-slot mr-[0.5vw]"></i>Gifts & Reawards</a>
+            <a href="{{ route('user-feedback') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="feedback"><i class="fa-solid fa-comment-dots mr-[0.5vw]"></i>Feedback</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center">
             <a href="{{ route('user-body-measurements') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="measurements"><i class="fa-solid fa-tape mr-[0.5vw]"></i>Body Measurement</a>
