@@ -41,13 +41,13 @@
 					</div>
 					<div>
 						<div>Phone Number</div>
-						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="tel" name="number" value="{{$User->phone_number}}" readonly>
+						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="tel" name="number" value="{{$User->phone_number}}">
 					</div>
 				</div>
 				<div class="flex justify-between mt-[4vw]">
 					<div>
 						<div>Gender</div>
-						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="gender" readonly value="{{$User->gender}}">
+						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="text" name="gender" value="{{$User->gender}}">
 					</div>
 					<div>
 						<div>Date of Birth</div>

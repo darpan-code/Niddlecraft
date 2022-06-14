@@ -6,7 +6,7 @@
 
 @section('body')
 	<!-- nav-bar section -->
-    <x-nav-bar userType='User' loginStatus='Yes' userName='Megha Sen'/>
+    <x-nav-bar userType='User' loginStatus='Yes' :userName=$userName/>
 
 	<div class="mt-[12vw] flex">
 

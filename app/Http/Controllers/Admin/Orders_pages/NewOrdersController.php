@@ -11,7 +11,16 @@ use function GuzzleHttp\Promise\all;
 class NewOrdersController extends Controller
 {
     // Appointments View
-    function appointmentsViewData(){
+    function appointmentsViewData(Request $request){
+
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
+
         //fetch user data from database
         $data = DB::table('appointment')->where('order_status', null)->count();
 

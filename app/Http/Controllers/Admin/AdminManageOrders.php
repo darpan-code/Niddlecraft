@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\DB;
 class AdminManageOrders extends Controller
 {
     // View
-    function viewData(){
+    function viewData(Request $request){
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
 
         $newAppointment = DB::table('appointment')->where('order_status', null)->count();
         $processingAppointment = DB::table('appointment')->where('order_status', 'Accepted')->count();

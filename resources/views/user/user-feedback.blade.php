@@ -6,7 +6,7 @@
 
 @section('body')
 	<!-- nav-bar section -->
-    <x-nav-bar userType='User' loginStatus='Yes' userName='Megha Sen'/>
+    <x-nav-bar userType='User' loginStatus='Yes' :userName=$userName/>
 
 	<div class="mt-[12vw] flex">
 
@@ -26,7 +26,6 @@
             @csrf
             <div>
                 <textarea name="message" class="border-solid border-gray-400 border-2 w-[57vw] h-[21vw] p-[0.5vw] rounded-md" placeholder="Max 220 word limit" cols="30" rows="10" spellcheck="false">{{$message}}</textarea>
-                <input type="text" name="userid" hidden value="{{$uid}}">
             </div>
             <div class="flex mt-[1vw] mb-[1vw]">
                 <button class="bg-blue-600 text-white text-[1.5vw] font-medium h-[2.5vw] w-[7vw] rounded-md" type="submit">Submit</button>

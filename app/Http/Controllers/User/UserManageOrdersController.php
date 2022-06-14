@@ -8,10 +8,21 @@ use Illuminate\Support\Facades\DB;
 
 class UserManageOrdersController extends Controller
 {
+    
     // User Manage Appointments page
-    function userManageAppointments(){
+    function userManageAppointments(Request $request){
+        
+        if (!$request->session()->has('id')) {
+            return redirect()->route('user-login');
+        }
+        if (session('name')=='Admin') {
+            return redirect()->route('admin-profile');
+        }
+        $id = session('id');
+        $userName = session('name');
+
         //fetch user data from database
-        $data = DB::table('appointment')->where('user_id', 1)->count();
+        $data = DB::table('appointment')->where('user_id', $id)->count();
 
         if ($data<=0) {
             $data = false;
@@ -19,11 +30,11 @@ class UserManageOrdersController extends Controller
         }else{
             $data = true;
             $AppointmentData = DB::table('appointment')
-                        ->where('user_id', 1)
+                        ->where('user_id', $id)
                         ->orderBy('order_date', 'desc')
                         ->orderBy('order_time', 'desc')
                         ->paginate(4);
         }
-        return view('user.user-manage-orders', ['AppointmentData'=>$AppointmentData, 'data'=>$data]);
+        return view('user.user-manage-orders', ['AppointmentData'=>$AppointmentData, 'data'=>$data, 'userName' =>$userName]);
     }
 }

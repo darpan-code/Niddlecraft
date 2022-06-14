@@ -10,6 +10,14 @@ class AdminManageUserController extends Controller
 {
     // View
     function viewData(Request $request){
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
+
         //fetch user data from database
         if (!$request->search=='') {
             $request->flash();
@@ -20,7 +28,7 @@ class AdminManageUserController extends Controller
             }else{
                 $data = false;
             }
-            return view('admin.manage-users', ['UserData'=>$UserData, 'data'=>$data]);
+            return view('admin.admin-manage-users', ['UserData'=>$UserData, 'data'=>$data]);
         }else{
             $request->flash();
             $UserData = DB::table('user_profile')->leftJoin('user_address', 'user_profile.uid', '=', 'user_address.user_id')->paginate(8);

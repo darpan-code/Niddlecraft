@@ -13,17 +13,20 @@
             </div>
 
             <div class="pl-[10vw]">
+                <form action="{{ route('user-login') }}" method="post">
+                    @csrf
                 <div class="flex flex-col justify-between text-[1.7vw] mt-[5vw] h-[20vw] w-[30vw]">
                     <div>
-                        <div class="font-medium">User ID</div>
-                        <input class="w-[30vw] border-gray-400 border-b-[0.2vw] text-[1.5vw] pl-[.5vw]" type="email" name="UserID" id="UserID" required>
+                        <div class="font-medium">Email ID</div>
+                        <input class="w-[30vw] border-gray-400 border-b-[0.2vw] text-[1.5vw] pl-[.5vw]" type="email" name="email" id="EmailID" required>
                     </div>
                     <div>
                         <div class="font-medium">Password</div>
                         <input class="w-[30vw] border-gray-400 border-b-[0.2vw] text-[1.5vw] pl-[.5vw]" type="password" name="password" id="password" required>
                     </div>
-                    <button onclick="location.href='{{ route('user-profile') }}'" class="font-medium text-[2vw] bg-[#0074D6] text-white w-[30vw] h-[4vw] rounded-[0.5vw]" type="submit">Login</button>
+                    <button class="font-medium text-[2vw] bg-[#0074D6] text-white w-[30vw] h-[4vw] rounded-[0.5vw]" type="submit">Login</button>
                 </div>
+                </form>
 
                 <div class="mt-[1vw] pl-[.5vw]">
                     <div class="text-[#0074D6] text-[1.2vw]">

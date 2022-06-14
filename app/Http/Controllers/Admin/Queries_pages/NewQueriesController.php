@@ -8,8 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class NewQueriesController extends Controller
 {
+    
     // Quarries View
-    function quarriesViewData(){
+    function quarriesViewData(Request $request){
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
+
         //fetch user data from database
         $data = DB::table('customers_queries')->where('status', null)->count();
 

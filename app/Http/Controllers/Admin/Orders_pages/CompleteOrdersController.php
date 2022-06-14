@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\DB;
 class CompleteOrdersController extends Controller
 {
    // Complete View
-    function completeViewData(){
+    function completeViewData(Request $request){
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
         //fetch user data from database
         $data = DB::table('appointment')->where('order_status', 'Delivered')->count();
 

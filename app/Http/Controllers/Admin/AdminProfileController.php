@@ -9,9 +9,20 @@ use Illuminate\Support\Facades\DB;
 class AdminProfileController extends Controller
 {
     // View
-    function viewData(){
+    function viewData(Request $request){
+
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
+
+        $id = session('id');
+
         //fetch admin data from database.
-        $AdminData = DB::table('admin')->where('id', 1)->get();
+        $AdminData = DB::table('admin')->where('id', $id)->get();
         return view('admin.admin-profile', ['AdminData'=>$AdminData]);
     }
 
@@ -32,8 +43,10 @@ class AdminProfileController extends Controller
         $email = $request->email;
         $number = $request->number;
 
+        $id = session('id');
+
         //Update admin data.
-        $UpdatedData = DB::table('admin')->where('id', 1)->update(['name'=>$name, 'email'=>$email, 'phone_number'=>$number, 'password'=>$password]);
+        $UpdatedData = DB::table('admin')->where('id', $id)->update(['name'=>$name, 'email'=>$email, 'phone_number'=>$number, 'password'=>$password]);
 
         if ($UpdatedData) {
             $UpdateStatus = 'Updated';

@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\DB;
 class AdminCustomerSupportController extends Controller
 {
     // View
-    function viewData(){
+    function viewData(Request $request){
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
 
         $newQueries = DB::table('customers_queries')->where('status', null)->count();
         $completeQueries = DB::table('customers_queries')->where('status', 'Done')->count();

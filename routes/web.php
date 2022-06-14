@@ -9,6 +9,7 @@ use App\Http\Controllers\User\UserAddressController;
 use App\Http\Controllers\User\UserBodyMeasurementsController;
 use App\Http\Controllers\User\UserAppointmentController;
 use App\Http\Controllers\User\UserManageOrdersController;
+use App\Http\Controllers\User\UserFeedbackController;
 use App\Http\Controllers\Admin\AdminManageUserController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\Orders_pages\CancelOrdersController;
@@ -18,7 +19,13 @@ use App\Http\Controllers\Admin\Orders_pages\NewOrdersController;
 use App\Http\Controllers\Admin\Orders_pages\ProcessingOrdersController;
 use App\Http\Controllers\Admin\Queries_pages\CompleteQueriesController;
 use App\Http\Controllers\Admin\Queries_pages\NewQueriesController;
-use App\Http\Controllers\User\UserFeedbackController;
+use App\Http\Controllers\Auth\AdminLoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegistrationController;
+use App\Http\Controllers\Auth\RegistrationOtpVerifyController;
+use App\Http\Controllers\Auth\UserChangePasswordController;
+use App\Http\Controllers\Auth\UserForgetPasswordController;
+use App\Http\Controllers\Auth\UserLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,13 +45,28 @@ Route::post('/', [MainController::class, 'contactData'])->name('home');
 // ********************* User side Routes *********************
 
 // User Registration page
-Route::get('/registration', [MainController::class, 'userRegistration'])->name('user-registration');
+Route::get('/registration', [RegistrationController::class, 'userRegistration'])->name('user-registration');
+Route::post('/registration', [RegistrationController::class, 'generateOTP'])->name('user-registration');
+
+// otp 
+Route::get('/otp-verify', [RegistrationOtpVerifyController::class, 'otpView'])->name('otp-verify');
+Route::post('/otp-verify', [RegistrationOtpVerifyController::class, 'otpVerify'])->name('otp-verify');
+
 
 // User Login page
-Route::get('/login', [MainController::class, 'userLogin'])->name('user-login');
+Route::get('/login', [UserLoginController::class, 'loginView'])->name('user-login');
+Route::post('/login', [UserLoginController::class, 'login'])->name('user-login');
+
+// logout
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 // User Forgot Password page
-Route::get('/forgot-password', [MainController::class, 'forgotPassword'])->name('forgot-password');
+Route::get('/forgot-password', [UserForgetPasswordController::class, 'view'])->name('forgot-password');
+Route::post('/forgot-password', [UserForgetPasswordController::class, 'generateOTP'])->name('forgot-password');
+
+// User Change Password page
+Route::get('/change-password', [UserChangePasswordController::class, 'view'])->name('change-password');
+Route::post('/change-password', [UserChangePasswordController::class, 'changePassword'])->name('change-password');
 
 // User OTP Verification page
 Route::get('/otp-verification', [MainController::class, 'otpVerification'])->name('otp-verification');
@@ -76,13 +98,8 @@ Route::post('/user-appointment', [UserAppointmentController::class, 'insertData'
 // ********************* Admin side Routes *********************
 
 // Admin Login page.
-Route::get('/admin-login', [MainController::class, 'adminLogin'])->name('admin-login');
-
-// Admin Forgot Password page.
-Route::get('/admin-forgot-password', [MainController::class, 'adminForgotPassword'])->name('admin-forgot-password');
-
-// Admin OTP Verification page.
-Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])->name('admin-otp-verification');
+Route::get('/admin-login', [AdminLoginController::class, 'loginView'])->name('admin-login');
+Route::post('/admin-login', [AdminLoginController::class, 'login'])->name('admin-login');
 
 // Admin Profile page.
 Route::get('/admin-profile', [AdminProfileController::class, 'viewData'])->name('admin-profile');

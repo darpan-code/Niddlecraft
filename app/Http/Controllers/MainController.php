@@ -9,14 +9,22 @@ use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
     // Home Page
-    function index(){
+    function index(Request $request){
+
+        if ($request->session()->has('id')) {
+            $userLogin = $request->session()->has('id');
+            $userName = session('name');
+        }else{
+            $userLogin = $request->session()->has('id');
+            $userName = '';
+        }
 
         $testimonial = DB::table('user_feedback')
                             ->leftJoin('user_profile', 'user_feedback.user_id', '=', 'user_profile.uid')
                             ->limit(3)
                             ->get();
 
-        return view('home', ['testimonial' => $testimonial]);
+        return view('home', ['testimonial' => $testimonial, 'userLogin' =>$userLogin, 'userName' =>$userName]);
     }
 
     // Contact Page
@@ -51,28 +59,6 @@ class MainController extends Controller
         }
         return redirect(asset('/#contact'))->with('status', $UpdateStatus);
     }
-
-
-    // User Registration Page
-    function userRegistration(){
-        return view('authentication.userAuth.registration');
-    }
-
-    // User Login Page
-    function userLogin(){
-        return view('authentication.userAuth.login');
-    }
-
-    // User Forgot Password page
-    function forgotPassword(){
-        return view('authentication.userAuth.forgot-password');
-    }
-
-    // User OTP Verification page
-    function otpVerification(){
-        return view('authentication.userAuth.otp-verification');
-    }
-
 
     // Admin Login page.
     function adminLogin(){

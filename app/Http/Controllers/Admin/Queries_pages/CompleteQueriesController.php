@@ -5,11 +5,19 @@ namespace App\Http\Controllers\admin\Queries_pages;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class CompleteQueriesController extends Controller
 {
     // Quarries View
-    function quarriesViewData(){
+    function quarriesViewData(Request $request){
+        if (!$request->session()->has('id')) {
+            return redirect()->route('admin-login');
+        }
+
+        if (session('name')!='Admin') {
+            return redirect()->route('admin-login');
+        }
         //fetch user data from database
         $data = DB::table('customers_queries')->where('status', 'Done')->count();
 

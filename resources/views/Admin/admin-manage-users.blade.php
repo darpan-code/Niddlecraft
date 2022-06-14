@@ -19,7 +19,7 @@
         {{-- Manage Users box --}}
         <div class="sidebar-border w-[65vw] ml-[3vw] min-h-[31vw] mb-[2vw] rounded-[1vw] text-[1.5vw] px-[3vw] pt-[2vw] font-semibold flex flex-col items-center">
 
-            <form action="" method="get">
+            <form action="{{ route('manage-users') }}" method="get">
             {{-- header section  --}}
             <div class="flex justify-between items-center w-[60vw]">
                 <div class="text-[2vw] font-bold">Manage Users</div>

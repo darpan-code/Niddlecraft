@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\DB;
 class UserAddressController extends Controller
 {
     // View
-    function viewData(){
-        $UserName = 'Megha Sen';
+    function viewData(Request $request){
+
+        if (!$request->session()->has('id')) {
+            return redirect()->route('user-login');
+        }
+        if (session('name')=='Admin') {
+            return redirect()->route('admin-profile');
+        }
+        $id = session('id');
+        $UserName = session('name');
+
         //fetch user data from database
-        $UserData = DB::table('user_address')->where('user_id', 1)->get();
+        $UserData = DB::table('user_address')->where('user_id', $id)->get();
 
         // convert class based array to normal array
         $UserData = json_decode(json_encode($UserData),true);
@@ -53,8 +62,10 @@ class UserAddressController extends Controller
         $state = 'West Bengal';
         $pincode = $request->pincode;
 
+        $id = session('id');
+
         //update user data to database
-        $UpdatedData = DB::table('user_address')->updateOrInsert(['user_id'=>1], ['address'=>$address, 'landmark'=>$landmark, 'city'=>$city, 'district'=>$district, 'pincode'=>$pincode, 'state'=>$state]);
+        $UpdatedData = DB::table('user_address')->updateOrInsert(['user_id'=>$id], ['address'=>$address, 'landmark'=>$landmark, 'city'=>$city, 'district'=>$district, 'pincode'=>$pincode, 'state'=>$state]);
         
         if ($UpdatedData) {
             $UpdateStatus = 'Updated';

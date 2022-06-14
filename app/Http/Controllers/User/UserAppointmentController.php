@@ -9,11 +9,20 @@ use Illuminate\Support\Facades\DB;
 class UserAppointmentController extends Controller
 {
     //view
-    function viewData(){
+    function viewData(Request $request){
+        
+        if (!$request->session()->has('id')) {
+            return redirect()->route('user-login');
+        }
+        if (session('name')=='Admin') {
+            return redirect()->route('admin-profile');
+        }
+        $id = session('id');
+
         $UserData = DB::table('user_profile')
                         ->leftJoin('user_address', 'user_profile.uid', '=', 'user_address.user_id')
                         ->leftJoin('user_body_measurements', 'user_profile.uid', '=', 'user_body_measurements.user_id')
-                        ->where('uid', '=', "1")->get();
+                        ->where('uid', '=', $id)->get();
 
         return view('services.user-appointment', ['UserData'=>$UserData]);
     }
@@ -33,6 +42,7 @@ class UserAppointmentController extends Controller
         $service = $request->service;
         $serviceType = $request->serviceType;
         $servicePlace = $request->servicePlace;
+        $id = session('id');
         date_default_timezone_set("asia/kolkata");
         
         if ($request->uploadDesign) {
@@ -40,7 +50,7 @@ class UserAppointmentController extends Controller
 
             //insert order data to database with image
             $UpdatedData = DB::table('appointment')->insert([
-                'user_id' => 1,
+                'user_id' => $id,
                 'service' => $service,
                 'service_type' => $serviceType,
                 'service_place' => $servicePlace,
@@ -51,7 +61,7 @@ class UserAppointmentController extends Controller
         }else{
             //insert order data to database without image
             $UpdatedData = DB::table('appointment')->insert([
-                'user_id' => 1,
+                'user_id' => $id,
                 'service' => $service,
                 'service_type' => $serviceType,
                 'service_place' => $servicePlace,

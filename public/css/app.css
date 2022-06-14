@@ -655,8 +655,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[10vw\] {
   height: 10vw;
 }
-.h-\[24vw\] {
-  height: 24vw;
+.h-\[21vw\] {
+  height: 21vw;
 }
 .h-\[1vw\] {
   height: 1vw;
@@ -667,14 +667,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[32vw\] {
   height: 32vw;
 }
+.h-\[24vw\] {
+  height: 24vw;
+}
 .h-\[35vw\] {
   height: 35vw;
 }
 .h-\[45vw\] {
   height: 45vw;
-}
-.h-\[21vw\] {
-  height: 21vw;
 }
 .min-h-\[31vw\] {
   min-height: 31vw;
@@ -814,11 +814,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[90vw\] {
   width: 90vw;
 }
-.w-\[58vw\] {
-  width: 58vw;
-}
 .w-\[57vw\] {
   width: 57vw;
+}
+.w-\[34vw\] {
+  width: 34vw;
 }
 .w-\[4vw\] {
   width: 4vw;
@@ -834,9 +834,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[85vw\] {
   width: 85vw;
-}
-.w-\[34vw\] {
-  width: 34vw;
 }
 .min-w-\[34vw\] {
   min-width: 34vw;
@@ -925,14 +922,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-\[\.2vw\] {
   border-radius: .2vw;
 }
+.rounded-md {
+  border-radius: 0.375rem;
+}
 .rounded-\[0\.4vw\] {
   border-radius: 0.4vw;
 }
 .rounded-\[\.3vw\] {
   border-radius: .3vw;
-}
-.rounded-md {
-  border-radius: 0.375rem;
 }
 .rounded-t-\[1vw\] {
   border-top-left-radius: 1vw;
@@ -1015,10 +1012,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bg-\[\#0000007b\] {
   background-color: #0000007b;
-}
-.bg-\[\#D5EDFF\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(213 237 255 / var(--tw-bg-opacity));
 }
 .bg-\[\#dee2e6\] {
   --tw-bg-opacity: 1;
@@ -1240,10 +1233,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
-}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1251,6 +1240,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[\#7C7C7C\] {
   --tw-text-opacity: 1;
   color: rgb(124 124 124 / var(--tw-text-opacity));
+}
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .hover\:text-\[\#4267B2\]:hover {
   --tw-text-opacity: 1;

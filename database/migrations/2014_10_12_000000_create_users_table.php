@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('dob')->nullable();
             $table->text('img')->nullable();
             $table->text('password')->nullable();
+            $table->string('verify', 255)->nullable();
         });
 
 
