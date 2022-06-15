@@ -38,7 +38,7 @@ class AdminProfileController extends Controller
         ]);
 
         // Set form data to variable
-        $name = $request->name;
+        // $name = $request->name;
         $password = $request->password;
         $email = $request->email;
         $number = $request->number;
@@ -46,7 +46,7 @@ class AdminProfileController extends Controller
         $id = session('id');
 
         //Update admin data.
-        $UpdatedData = DB::table('admin')->where('id', $id)->update(['name'=>$name, 'email'=>$email, 'phone_number'=>$number, 'password'=>$password]);
+        $UpdatedData = DB::table('admin')->where('id', $id)->update(['email'=>$email, 'phone_number'=>$number, 'password'=>$password]);
 
         if ($UpdatedData) {
             $UpdateStatus = 'Updated';

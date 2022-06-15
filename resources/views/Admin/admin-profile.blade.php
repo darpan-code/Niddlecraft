@@ -28,7 +28,7 @@
 				<div class="flex justify-between mt-[4vw] ">
 					<div>
 						<div>Name</div>
-						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" name="name" type="text" value="{{$Admin->name}}">
+						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" name="name" type="text" value="{{$Admin->name}}" readonly>
 					</div>
 					<div>
 						<div>Password</div>

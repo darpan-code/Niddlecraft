@@ -805,11 +805,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[37vw\] {
   width: 37vw;
 }
-.w-\[30vw\] {
-  width: 30vw;
-}
 .w-\[25vw\] {
   width: 25vw;
+}
+.w-\[30vw\] {
+  width: 30vw;
 }
 .w-\[90vw\] {
   width: 90vw;

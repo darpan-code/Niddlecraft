@@ -25,7 +25,11 @@ class UserLoginController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        $user = DB::table('user_profile')->where('email', $email)->first();
+        $user = DB::table('user_profile')->where([
+            ['email', '=', $email],
+            ['verify', '=', 'Verified'],
+            ])->first();
+            
         if ($user==null) {
             return redirect()->route('user-login');
         }

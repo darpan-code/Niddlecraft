@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Red Hat Display';
     scroll-behavior: smooth;
-    user-select: none;
+    /* user-select: none; */
 }
 
 :focus{
