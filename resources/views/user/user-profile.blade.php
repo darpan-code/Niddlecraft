@@ -31,7 +31,7 @@
 					</div>
 					<div>
 						<div>Password</div>
-						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="password" name="password" value="{{$User->password}}">
+						<input class="border-b-[0.2vw] w-[26vw] pl-[.5vw]" type="password" name="password" value="{{$User->password}}" readonly>
 					</div>
 				</div>
 				<div class="flex justify-between mt-[4vw]">

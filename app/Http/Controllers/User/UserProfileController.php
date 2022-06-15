@@ -41,7 +41,7 @@ class UserProfileController extends Controller
 
         // set form data to variable
         $name = $request->name;
-        $password = $request->password;
+        // $password = $request->password;
         // $hash = password_hash($password, PASSWORD_BCRYPT);
         $email = $request->email;
         $number = $request->number;
@@ -61,6 +61,7 @@ class UserProfileController extends Controller
 
         if ($UpdatedData) {
             $UpdateStatus = 'Updated';
+            session(['name' => $name]);
         }else{
             $UpdateStatus = 'Failed';
         }
