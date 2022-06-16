@@ -12,7 +12,7 @@
             <img class="w-[40vw]" src="{{ asset('images/vectors/login.png')}}" alt="Login image">
         </div>
 
-        <form action="" method="post">
+        <form action="{{route('admin-login')}}" method="post">
             @csrf
             <div class="pl-[10vw]">
                 <div class="flex flex-col justify-between text-[1.7vw] mt-[8vw] h-[25vw]  w-[30vw]">

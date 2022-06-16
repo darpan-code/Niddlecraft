@@ -38,7 +38,7 @@ class UserForgetPasswordController extends Controller
         $mail = new PHPMailer(true);
         
         try {
-            $mail->SMTPDebug = 2;									
+            $mail->SMTPDebug = 0;									
             $mail->isSMTP();											
             $mail->Host	 = 'smtp.gmail.com;';					
             $mail->SMTPAuth = true;							
@@ -47,7 +47,7 @@ class UserForgetPasswordController extends Controller
             $mail->SMTPSecure = 'tls';							
             $mail->Port	 = 587;
         
-            $mail->setFrom('contact.vidya.official@gmail.com', 'Niddlecraft');		
+            $mail->setFrom('contact.niddlecraft@gmail.com', 'Niddlecraft');		
             $mail->addAddress($email);
             
             $mail->isHTML(true);								
