@@ -1,0 +1,44 @@
+.icon-scroll,
+.icon-scroll:before {
+    position: absolute;
+    left: 50%;
+    top: 50vw;
+}
+.icon-scroll {
+    width: 1.953vw;
+    height: 3.255vw;
+    position: absolute;
+    top: 45vw;
+    left: 48.5vw;
+    /* margin-left: -1.302vw;
+    bottom: 0.651vw;
+    margin-top: -2.279vw; */
+    border: 0.130vw solid rgb(0, 0, 0);
+    border-radius: 1.628vw;
+}
+/* @media (max-width: 767px) {
+    .icon-scroll {
+        position: relative;
+    }
+} */
+.icon-scroll:before {
+    content: '';
+    width: 0.521vw;
+    height: 0.521vw;
+    background: rgb(0, 0, 0);
+    margin-left: -0.260vw;
+    top: 0.521vw;
+    border-radius: 0.260vw;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll
+}
+@keyframes scroll {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1.693vw)
+    }
+}
